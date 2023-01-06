@@ -25,7 +25,6 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
   @override
   void initState() {
     super.initState();
-    init();
   }
 
   @override
@@ -114,6 +113,11 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
               style: const TextStyle(
                 color: Colors.blue,
               ),
+            ),
+            const SizedBox(width: 100),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(product.note),
             ),
           ],
         ),

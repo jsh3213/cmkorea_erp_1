@@ -32,6 +32,7 @@ class _UpDateScreenState extends State<UpdateScreen> {
   final List<String> _list = [
     '확인',
     '대기',
+    '현업 대기',
     '완료',
   ];
 
@@ -40,21 +41,24 @@ class _UpDateScreenState extends State<UpdateScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Text(widget.product.serialNumber),
+        title: Text(
+          widget.product.serialNumber,
+          textAlign: TextAlign.center,
+        ),
         actions: [
           TextButton(
             onPressed: () => {
               productUpdate(),
             },
             child: const Text(
-              '완료',
+              '저장',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
             ),
-          )
+          ),
         ],
       ),
       body: SingleChildScrollView(

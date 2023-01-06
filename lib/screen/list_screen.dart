@@ -141,7 +141,7 @@ class FilterNetworkListPageState extends State<ListScreen> {
               // titleStyle: TextStyle(fontSize: 15),
               content: TextField(
                 controller: controller,
-                decoration: InputDecoration(labelText: "cmk 입력하세요."),
+                decoration: const InputDecoration(labelText: "cmk 입력하세요."),
                 textInputAction: TextInputAction.done,
               ),
               confirmTextColor: Colors.white,

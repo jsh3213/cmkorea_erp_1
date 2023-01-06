@@ -44,7 +44,10 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
     setState(() => status = true);
     var response = await ProductApi.productList();
     setState(() {
-      products = response.where((e) => e.repairTypeDecide == '대기').toList();
+      products = response
+          .where((e) =>
+              e.repairTypeDecide == '대기' || e.repairTypeDecide == '현업 대기')
+          .toList();
     });
     setState(() => status = false);
   }
@@ -91,14 +94,17 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
   Widget buildList(Product product, index) => ListTile(
         leading: Text(
           "${index + 1}",
-          style: const TextStyle(color: Colors.white),
         ),
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               product.serialNumber.toString(),
               style: const TextStyle(color: Colors.green),
             ),
+            Text(
+              product.repairTypeDecide.toString(),
+            )
           ],
         ),
         subtitle: Text(
