@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 import '../../model/product.dart';
+// ignore: depend_on_referenced_packages
 import 'package:timer_builder/timer_builder.dart';
 
 import '../controller/getxController.dart';
@@ -114,7 +115,7 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
                 color: Colors.blue,
               ),
             ),
-            const SizedBox(width: 100),
+            const SizedBox(width: 50),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(product.note),

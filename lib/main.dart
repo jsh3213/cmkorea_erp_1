@@ -1,11 +1,10 @@
-import 'dart:async';
-
 import 'package:cmkorea_erp/screen/list_done_screen.dart';
 import 'package:cmkorea_erp/screen/time_screen.dart';
 import 'package:flutter/material.dart';
 import 'api/product_api.dart';
 import 'model/product.dart';
 import 'screen/list_wait_screen.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
 void main() {

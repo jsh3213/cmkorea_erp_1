@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:cmkorea_erp/main.dart';
 import 'package:cmkorea_erp/screen/update_screen.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages

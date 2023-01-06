@@ -1,10 +1,13 @@
-// ignore: depend_on_referenced_packages
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
+// ignore: depend_on_referenced_packages
 import 'package:audioplayers/audioplayers.dart';
-import '../api/product_api.dart';
 import '../model/product.dart';
+// ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 
 class BuilderController extends GetxController {
