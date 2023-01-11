@@ -17,7 +17,7 @@ class ListScreen extends StatefulWidget {
 class FilterNetworkListPageState extends State<ListScreen> {
   TextEditingController controller = TextEditingController();
 
-  List<Product> products = [];
+  static List<Product> products = [];
   String query = '';
   Timer? debouncer;
   bool status = true;
@@ -46,8 +46,8 @@ class FilterNetworkListPageState extends State<ListScreen> {
 
   Future init() async {
     setState(() => status = true);
-    var products = await ProductApi.productListSearch(query);
-    setState(() => this.products = products);
+    var response = await ProductApi.productListSearch(query);
+    setState(() => products = response);
     setState(() => status = false);
     const Duration(milliseconds: 200);
   }
@@ -101,11 +101,11 @@ class FilterNetworkListPageState extends State<ListScreen> {
       );
 
   Future searchProducts(String query) async => debounce(() async {
-        final products = await ProductApi.productListSearch(query);
+        var response = await ProductApi.productListSearch(query);
         if (!mounted) return;
         setState(() {
           this.query = query;
-          this.products = products;
+          products = response;
         });
       });
 

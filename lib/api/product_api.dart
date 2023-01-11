@@ -12,7 +12,7 @@ final baseUrl = controller.baseUrl;
 
 class ProductApi {
   static Future<List<Product>> productListSearch(String query) async {
-    final url = Uri.parse('$baseUrl/api/product/list/');
+    final url = Uri.parse('$baseUrl/api/product/repairTypeList/');
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final List products = json.decode(utf8.decode(response.bodyBytes));
@@ -29,7 +29,7 @@ class ProductApi {
   }
 
   static Future<List<Product>> productList() async {
-    final url = Uri.parse("$baseUrl/api/product/list/");
+    final url = Uri.parse("$baseUrl/api/product/repairTypeList/");
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final List products = json.decode(utf8.decode(response.bodyBytes));

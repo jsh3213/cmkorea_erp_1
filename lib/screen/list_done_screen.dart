@@ -4,12 +4,9 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 import '../../model/product.dart';
-// ignore: depend_on_referenced_packages
-import 'package:timer_builder/timer_builder.dart';
+import '../api/product_api.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-import '../controller/getxController.dart';
-
-// ignore: must_be_immutable
 class ListDoneScreen extends StatefulWidget {
   const ListDoneScreen({super.key});
 
@@ -18,117 +15,114 @@ class ListDoneScreen extends StatefulWidget {
 }
 
 class FilterNetworkListPageState extends State<ListDoneScreen> {
-  List<Product> products = [];
+  static List<Product> products = [];
   String query = '';
-  Timer? debouncer;
-  final controller = Get.put(BuilderController());
+  bool wait = true;
+  bool status = false;
+  Timer? _timer;
 
   @override
   void initState() {
+    init();
     super.initState();
   }
 
   @override
   void dispose() {
-    debouncer?.cancel();
+    _timer?.cancel();
     super.dispose();
   }
 
-  void debounce(VoidCallback callback,
-      {Duration duration = const Duration(milliseconds: 1500)}) {
-    if (debouncer != null) {
-      debouncer!.cancel();
-    }
-    debouncer = Timer(duration, callback);
+  Future init() async {
+    setState(() => wait = true);
+    var response = await ProductApi.productList();
+    setState(() {
+      products = response
+          .where((element) => element.repairTypeDecide == '완료')
+          .toList();
+    });
+    setState(() {
+      wait = false;
+    });
+    a();
   }
 
-  Future<List<Product>> init() async {
-    await controller.getList();
-    products = controller.products;
-    return products;
+  a() {
+    _timer?.cancel();
+    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
+      b();
+    });
+  }
+
+  b() {
+    setState(() {
+      status = !status;
+    });
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-            title: const Text('수리타입 (완료)'),
-            centerTitle: true,
-            leading: IconButton(
-                onPressed: () {
-                  setState(() {
-                    products.length;
-                  });
-                },
-                icon: const Icon(Icons.replay))),
+          backgroundColor: Colors.blue,
+          title: const Text('수리 타입 결정 (완료)'),
+          centerTitle: true,
+          leading: Container(),
+        ),
         body: Column(
           children: <Widget>[
             Expanded(
-              child: TimerBuilder.periodic(
-                const Duration(seconds: 60),
-                builder: (context) {
-                  return FutureBuilder<List<Product>>(
-                    future: init(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        return const Center(
-                          child: Text('error'),
+              child: wait
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 4,
+                      ),
+                    )
+                  : ListView.builder(
+                      itemCount: products.length,
+                      itemBuilder: (context, index) {
+                        final product = products[index];
+                        return Column(
+                          children: [
+                            buildProduct(product, index),
+                            const Divider(),
+                          ],
                         );
-                      } else if (snapshot.hasData) {
-                        return buildList(context);
-                      } else {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
-                    },
-                  );
-                },
-              ),
+                      },
+                    ),
             ),
           ],
         ),
       );
-  Widget buildList(context) {
-    return ListView.builder(
-      itemCount: products.length,
-      itemBuilder: (context, index) {
-        final product = products[index];
-        return Column(
-          children: [
-            buildProduct(product, index),
-            const Divider(),
-          ],
-        );
-      },
-    );
-  }
 
-  Widget buildProduct(Product product, index) => ListTile(
-        leading: Text(
-          "${index + 1}",
-        ),
-        title: Row(
-          children: [
-            Text(
-              product.serialNumber,
-              style: const TextStyle(
-                color: Colors.blue,
+  Widget buildProduct(Product product, index) => Container(
+        color: status ? Colors.red : Colors.yellow,
+        child: ListTile(
+          leading: Text(
+            "${index + 1}",
+          ),
+          title: Row(
+            children: [
+              Text(
+                product.serialNumber,
+                style: const TextStyle(
+                  color: Colors.blue,
+                ),
               ),
-            ),
-            const SizedBox(width: 50),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(product.note),
-            ),
-          ],
+              const SizedBox(width: 50),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(product.note),
+              ),
+            ],
+          ),
+          subtitle: Text(
+            product.model,
+          ),
+          onTap: () async {
+            Get.to(() => UpdateScreen(
+                  product: products[index],
+                ));
+          },
         ),
-        subtitle: Text(
-          product.model,
-        ),
-        onTap: () async {
-          Get.to(() => UpdateScreen(
-                product: products[index],
-              ));
-        },
       );
 }

@@ -62,22 +62,20 @@ class _UpDateScreenState extends State<UpdateScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        child: wait
-            ? waitWidget()
-            : Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(border: Border.all()),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      buildText('수리타입 결정 : ', _selecteValue, _list),
-                      const Divider(),
-                      buildNoteTextField('주의사항 : ', controllerNote),
-                    ],
-                  ),
-                ),
-              ),
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(border: Border.all()),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                buildText('수리타입 결정 : ', _selecteValue, _list),
+                const Divider(),
+                buildNoteTextField('주의사항 : ', controllerNote),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -128,7 +126,10 @@ class _UpDateScreenState extends State<UpdateScreen> {
             child: Text(
               text,
               textAlign: TextAlign.center,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
           )),
       Expanded(
@@ -156,30 +157,8 @@ class _UpDateScreenState extends State<UpdateScreen> {
       controllerNote.text,
     );
     if (status == 200) {
-      controller.products.length;
       Get.off(const MyHomePage());
       Get.snackbar('성공', '저장 완료 ', snackPosition: SnackPosition.BOTTOM);
     }
   }
-}
-
-Center waitWidget() {
-  return Center(
-    child: SizedBox(
-      width: 200,
-      height: 100,
-      child: Column(
-        // ignore: prefer_const_literals_to_create_immutables
-        children: [
-          const Center(
-            child: Text('등록 중...'),
-          ),
-          const LinearProgressIndicator(
-            valueColor: AlwaysStoppedAnimation(Colors.blue),
-            backgroundColor: Colors.white,
-          ),
-        ],
-      ),
-    ),
-  );
 }

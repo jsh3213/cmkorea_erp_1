@@ -17,7 +17,7 @@ class _TimeScreenState extends State<TimeScreen> {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: TimerBuilder.periodic(const Duration(seconds: 5),
+          child: TimerBuilder.periodic(const Duration(seconds: 60),
               builder: (context) {
             return Text(
               DateFormat('yyyy'

@@ -15,7 +15,7 @@ class ListWaitScreen extends StatefulWidget {
 }
 
 class FilterNetworkListPageState extends State<ListWaitScreen> {
-  List<Product> products = [];
+  static List<Product> products = [];
   String query = '';
   Timer? debouncer;
   bool status = true;
@@ -32,21 +32,14 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
     super.dispose();
   }
 
-  void debounce(VoidCallback callback,
-      {Duration duration = const Duration(milliseconds: 1500)}) {
-    if (debouncer != null) {
-      debouncer!.cancel();
-    }
-    debouncer = Timer(duration, callback);
-  }
-
   Future init() async {
     setState(() => status = true);
     var response = await ProductApi.productList();
     setState(() {
       products = response
-          .where((e) =>
-              e.repairTypeDecide == '대기' || e.repairTypeDecide == '현업 대기')
+          .where((element) =>
+              element.repairTypeDecide == '대기' ||
+              element.repairTypeDecide == '현업 대기')
           .toList();
     });
     setState(() => status = false);
@@ -56,12 +49,11 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.green,
-          title: const Text('수리타입 (대기)'),
+          title: const Text('수리 타입 결정 (대기)'),
           centerTitle: true,
           leading: IconButton(
               onPressed: () {
                 Get.to(() => const ListScreen());
-                init();
               },
               icon: const Icon(Icons.add)),
         ),
