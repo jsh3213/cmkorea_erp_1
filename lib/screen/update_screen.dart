@@ -27,7 +27,7 @@ class _UpDateScreenState extends State<UpdateScreen> {
   TextEditingController controllerNote = TextEditingController();
   String _selecteValue = '확인';
   bool wait = false;
-  final controller = Get.put(BuilderController());
+  final controller = Get.put(ReactiveController());
 
   final List<String> _list = [
     '확인',

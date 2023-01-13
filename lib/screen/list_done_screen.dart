@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../model/product.dart';
 import '../api/product_api.dart';
+// ignore: depend_on_referenced_packages
 import 'package:audioplayers/audioplayers.dart';
 
 class ListDoneScreen extends StatefulWidget {
@@ -19,12 +20,21 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
   String query = '';
   bool wait = true;
   bool status = false;
-  Timer? _timer;
+  static Timer? _timer;
+  bool colorChange = false;
+  final AudioCache cache = AudioCache();
+  final player = AudioPlayer();
 
   @override
   void initState() {
     init();
     super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    _timer?.cancel();
+    super.didChangeDependencies();
   }
 
   @override
@@ -44,19 +54,28 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
     setState(() {
       wait = false;
     });
-    a();
+    showColor();
+    playAudio();
   }
 
-  a() {
-    _timer?.cancel();
-    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
-      b();
+  void showColor() {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      setState(() {
+        colorChange = !colorChange;
+      });
+      controller.colorChange.value = colorChange;
+      if (products.isEmpty) {
+        _timer?.cancel();
+      }
     });
   }
 
-  b() {
-    setState(() {
-      status = !status;
+  void playAudio() {
+    _timer = Timer.periodic(const Duration(seconds: 60), (timer) {
+      player.play(AssetSource('dingdong.mp3'));
+      if (products.isEmpty) {
+        _timer?.cancel();
+      }
     });
   }
 
@@ -94,35 +113,32 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
         ),
       );
 
-  Widget buildProduct(Product product, index) => Container(
-        color: status ? Colors.red : Colors.yellow,
-        child: ListTile(
-          leading: Text(
-            "${index + 1}",
-          ),
-          title: Row(
-            children: [
-              Text(
-                product.serialNumber,
-                style: const TextStyle(
-                  color: Colors.blue,
-                ),
-              ),
-              const SizedBox(width: 50),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(product.note),
-              ),
-            ],
-          ),
-          subtitle: Text(
-            product.model,
-          ),
-          onTap: () async {
-            Get.to(() => UpdateScreen(
-                  product: products[index],
-                ));
-          },
+  Widget buildProduct(Product product, index) => ListTile(
+        leading: Text(
+          "${index + 1}",
         ),
+        title: Row(
+          children: [
+            Text(
+              product.serialNumber,
+              style: const TextStyle(
+                color: Colors.blue,
+              ),
+            ),
+            const SizedBox(width: 50),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(product.note),
+            ),
+          ],
+        ),
+        subtitle: Text(
+          product.model,
+        ),
+        onTap: () async {
+          Get.to(() => UpdateScreen(
+                product: products[index],
+              ));
+        },
       );
 }

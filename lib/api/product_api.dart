@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import '../../model/product.dart';
 import '../controller/getxController.dart';
 
-final controller = Get.put(BuilderController());
+final controller = Get.put(ReactiveController());
 final baseUrl = controller.baseUrl;
 
 class ProductApi {
