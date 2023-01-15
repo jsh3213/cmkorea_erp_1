@@ -1,11 +1,11 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:cmkorea_erp/screen/update_screen.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 import '../../model/product.dart';
 import '../api/product_api.dart';
-// ignore: depend_on_referenced_packages
 import 'package:audioplayers/audioplayers.dart';
 
 class ListDoneScreen extends StatefulWidget {
@@ -55,23 +55,20 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
       wait = false;
     });
     showColor();
-    playAudio();
   }
 
-  void showColor() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+  showColor() {
+    _timer = Timer.periodic(const Duration(milliseconds: 2000), (timer) {
       setState(() {
         colorChange = !colorChange;
       });
       controller.colorChange.value = colorChange;
       if (products.isEmpty) {
         _timer?.cancel();
+        controller.colorChange.value = false;
       }
     });
-  }
-
-  void playAudio() {
-    _timer = Timer.periodic(const Duration(seconds: 60), (timer) {
+    _timer = Timer.periodic(const Duration(milliseconds: 5000), (timer) {
       player.play(AssetSource('dingdong.mp3'));
       if (products.isEmpty) {
         _timer?.cancel();

@@ -38,7 +38,7 @@ class _TimeScreenState extends State<TimeScreen> {
       body: SafeArea(
         child: Obx(
           () => Container(
-            color: controller.colorChange.value ? Colors.white : Colors.yellow,
+            color: controller.colorChange.value ? Colors.yellow : Colors.white,
             child: Center(
               child: TimerBuilder.periodic(const Duration(seconds: 30),
                   builder: (context) {
