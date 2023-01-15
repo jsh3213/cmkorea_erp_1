@@ -58,7 +58,7 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
   }
 
   showColor() {
-    _timer = Timer.periodic(const Duration(milliseconds: 2000), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
       setState(() {
         colorChange = !colorChange;
       });
@@ -68,7 +68,7 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
         controller.colorChange.value = false;
       }
     });
-    _timer = Timer.periodic(const Duration(milliseconds: 5000), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 60), (timer) {
       player.play(AssetSource('dingdong.mp3'));
       if (products.isEmpty) {
         _timer?.cancel();
