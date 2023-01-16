@@ -61,22 +61,28 @@ class _UpDateScreenState extends State<UpdateScreen> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(border: Border.all()),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                buildText('수리타입 결정 : ', _selecteValue, _list),
-                const Divider(),
-                buildNoteTextField('주의사항 : ', controllerNote),
-              ],
+      body: wait
+          ? const Center(
+              child: CircularProgressIndicator(
+                strokeWidth: 4,
+              ),
+            )
+          : SingleChildScrollView(
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(border: Border.all()),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      buildText('수리타입 결정 : ', _selecteValue, _list),
+                      const Divider(),
+                      buildNoteTextField('주의사항 : ', controllerNote),
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
-        ),
-      ),
     );
   }
 
@@ -160,5 +166,6 @@ class _UpDateScreenState extends State<UpdateScreen> {
       Get.off(const MyHomePage());
       Get.snackbar('성공', '저장 완료 ', snackPosition: SnackPosition.BOTTOM);
     }
+    setState(() => wait = false);
   }
 }

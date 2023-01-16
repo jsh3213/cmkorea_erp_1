@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:cmkorea_erp/screen/update_screen.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
@@ -8,7 +7,6 @@ import '../../model/product.dart';
 import '../api/product_api.dart';
 // ignore: depend_on_referenced_packages
 import 'package:audioplayers/audioplayers.dart';
-import 'package:timer_builder/timer_builder.dart';
 
 class ListDoneScreen extends StatefulWidget {
   const ListDoneScreen({super.key});
@@ -22,27 +20,35 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
   String query = '';
   bool wait = true;
   bool status = false;
-  static Timer? _timer;
+  static Timer? _timer1;
+  static Timer? _timer2;
+  static Timer? _timer3;
   bool colorChange = false;
   final AudioCache cache = AudioCache();
   final player = AudioPlayer();
 
   @override
   void initState() {
-    _timer?.cancel();
     init();
     super.initState();
+    _timer1?.cancel();
+    _timer2?.cancel();
+    _timer3?.cancel();
   }
 
   @override
   void didChangeDependencies() {
-    _timer?.cancel();
+    _timer1?.cancel();
+    _timer2?.cancel();
+    _timer3?.cancel();
     super.didChangeDependencies();
   }
 
   @override
   void dispose() {
-    _timer?.cancel();
+    _timer1?.cancel();
+    _timer2?.cancel();
+    _timer3?.cancel();
     super.dispose();
   }
 
@@ -61,23 +67,26 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
     setState(() {
       wait = false;
     });
-    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
+
+    _timer1 = Timer.periodic(const Duration(seconds: 2), (timer) {
       setState(() {
         colorChange = !colorChange;
       });
       controller.colorChange.value = colorChange;
-      print('1');
       if (products.isEmpty) {
-        _timer?.cancel();
+        _timer1?.cancel();
         controller.colorChange.value = false;
       }
     });
-    _timer = Timer.periodic(const Duration(seconds: 60), (timer) {
+    _timer2 = Timer.periodic(const Duration(seconds: 60), (timer) {
       player.play(AssetSource('dingdong.mp3'));
       if (products.isEmpty) {
-        _timer?.cancel();
+        _timer2?.cancel();
       }
-      print('2');
+    });
+
+    _timer3 = Timer.periodic(const Duration(seconds: 60), (timer) {
+      getList();
     });
   }
 
@@ -98,33 +107,29 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
         centerTitle: true,
         leading: Container(),
       ),
-      body: TimerBuilder.periodic(const Duration(seconds: 121),
-          builder: (context) {
-        getList();
-        return Column(
-          children: <Widget>[
-            Expanded(
-                child: wait
-                    ? const Center(
-                        child: CircularProgressIndicator(
-                          strokeWidth: 4,
-                        ),
-                      )
-                    : ListView.builder(
-                        itemCount: products.length,
-                        itemBuilder: (context, index) {
-                          final product = products[index];
-                          return Column(
-                            children: [
-                              buildProduct(product, index),
-                              const Divider(),
-                            ],
-                          );
-                        },
-                      )),
-          ],
-        );
-      }));
+      body: Column(
+        children: <Widget>[
+          Expanded(
+              child: wait
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 4,
+                      ),
+                    )
+                  : ListView.builder(
+                      itemCount: products.length,
+                      itemBuilder: (context, index) {
+                        final product = products[index];
+                        return Column(
+                          children: [
+                            buildProduct(product, index),
+                            const Divider(),
+                          ],
+                        );
+                      },
+                    )),
+        ],
+      ));
 
   Widget buildProduct(Product product, index) => ListTile(
         leading: Text(
@@ -148,7 +153,7 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
         subtitle: Text(
           product.model,
         ),
-        onTap: () async {
+        onTap: () {
           Get.to(() => UpdateScreen(
                 product: products[index],
               ));

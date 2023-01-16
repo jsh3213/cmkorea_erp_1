@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:cmkorea_erp/screen/list_screen.dart';
 import 'package:cmkorea_erp/screen/update_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +19,8 @@ class ListWaitScreen extends StatefulWidget {
 class FilterNetworkListPageState extends State<ListWaitScreen> {
   static List<Product> products = [];
   String query = '';
-  Timer? debouncer;
   bool status = true;
+  static Timer? _timer;
 
   @override
   void initState() {
@@ -29,7 +30,6 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
 
   @override
   void dispose() {
-    debouncer?.cancel();
     super.dispose();
   }
 
@@ -44,6 +44,9 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
           .toList();
     });
     setState(() => status = false);
+    _timer = Timer.periodic(const Duration(seconds: 60), (timer) {
+      getList();
+    });
   }
 
   void getList() async {
@@ -69,34 +72,30 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
             },
             icon: const Icon(Icons.add)),
       ),
-      body: TimerBuilder.periodic(const Duration(seconds: 121),
-          builder: (context) {
-        getList();
-        return Column(
-          children: <Widget>[
-            Expanded(
-              child: status
-                  ? const Center(
-                      child: CircularProgressIndicator(
-                        strokeWidth: 4,
-                      ),
-                    )
-                  : ListView.builder(
-                      itemCount: products.length,
-                      itemBuilder: (context, index) {
-                        final product = products[index];
-                        return Column(
-                          children: [
-                            buildList(product, index),
-                            const Divider(),
-                          ],
-                        );
-                      },
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: status
+                ? const Center(
+                    child: CircularProgressIndicator(
+                      strokeWidth: 4,
                     ),
-            ),
-          ],
-        );
-      }));
+                  )
+                : ListView.builder(
+                    itemCount: products.length,
+                    itemBuilder: (context, index) {
+                      final product = products[index];
+                      return Column(
+                        children: [
+                          buildList(product, index),
+                          const Divider(),
+                        ],
+                      );
+                    },
+                  ),
+          ),
+        ],
+      ));
 
   Widget buildList(Product product, index) => ListTile(
         leading: Text(
