@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../model/product.dart';
 import '../api/product_api.dart';
+import 'package:timer_builder/timer_builder.dart';
 
 class ListWaitScreen extends StatefulWidget {
   const ListWaitScreen({super.key});
@@ -45,19 +46,33 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
     setState(() => status = false);
   }
 
+  void getList() async {
+    var response = await ProductApi.productList();
+    setState(() {
+      products = response
+          .where((element) =>
+              element.repairTypeDecide == '대기' ||
+              element.repairTypeDecide == '현업 대기')
+          .toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.green,
-          title: const Text('수리 타입 결정 (대기)'),
-          centerTitle: true,
-          leading: IconButton(
-              onPressed: () {
-                Get.to(() => const ListScreen());
-              },
-              icon: const Icon(Icons.add)),
-        ),
-        body: Column(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: Text('수리 타입 결정(대기) 수량: ${products.length}'),
+        centerTitle: true,
+        leading: IconButton(
+            onPressed: () {
+              Get.to(() => const ListScreen());
+            },
+            icon: const Icon(Icons.add)),
+      ),
+      body: TimerBuilder.periodic(const Duration(seconds: 121),
+          builder: (context) {
+        getList();
+        return Column(
           children: <Widget>[
             Expanded(
               child: status
@@ -80,8 +95,8 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
                     ),
             ),
           ],
-        ),
-      );
+        );
+      }));
 
   Widget buildList(Product product, index) => ListTile(
         leading: Text(

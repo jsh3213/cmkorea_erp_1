@@ -5,6 +5,7 @@ import 'model/product.dart';
 import 'screen/list_wait_screen.dart';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
+import 'package:timer_builder/timer_builder.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +32,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Product> products = [];
+
   @override
   void initState() {
     super.initState();
@@ -39,7 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+        body: TimerBuilder.periodic(const Duration(seconds: 5),
+            builder: (context) {
+      return Container(
         margin: const EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-      ),
-    );
+      );
+    }));
   }
 }

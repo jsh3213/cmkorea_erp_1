@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:cmkorea_erp/screen/update_screen.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
@@ -7,6 +8,7 @@ import '../../model/product.dart';
 import '../api/product_api.dart';
 // ignore: depend_on_referenced_packages
 import 'package:audioplayers/audioplayers.dart';
+import 'package:timer_builder/timer_builder.dart';
 
 class ListDoneScreen extends StatefulWidget {
   const ListDoneScreen({super.key});
@@ -27,6 +29,7 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
 
   @override
   void initState() {
+    _timer?.cancel();
     init();
     super.initState();
   }
@@ -44,6 +47,10 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
   }
 
   Future init() async {
+    showColor();
+  }
+
+  showColor() async {
     setState(() => wait = true);
     var response = await ProductApi.productList();
     setState(() {
@@ -54,15 +61,12 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
     setState(() {
       wait = false;
     });
-    showColor();
-  }
-
-  showColor() {
     _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
       setState(() {
         colorChange = !colorChange;
       });
       controller.colorChange.value = colorChange;
+      print('1');
       if (products.isEmpty) {
         _timer?.cancel();
         controller.colorChange.value = false;
@@ -73,42 +77,54 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
       if (products.isEmpty) {
         _timer?.cancel();
       }
+      print('2');
+    });
+  }
+
+  void getList() async {
+    var response = await ProductApi.productList();
+    setState(() {
+      products = response
+          .where((element) => element.repairTypeDecide == '완료')
+          .toList();
     });
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: const Text('수리 타입 결정 (완료)'),
-          centerTitle: true,
-          leading: Container(),
-        ),
-        body: Column(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text('수리 타입 결정(완료)  수량: ${products.length}'),
+        centerTitle: true,
+        leading: Container(),
+      ),
+      body: TimerBuilder.periodic(const Duration(seconds: 121),
+          builder: (context) {
+        getList();
+        return Column(
           children: <Widget>[
             Expanded(
-              child: wait
-                  ? const Center(
-                      child: CircularProgressIndicator(
-                        strokeWidth: 4,
-                      ),
-                    )
-                  : ListView.builder(
-                      itemCount: products.length,
-                      itemBuilder: (context, index) {
-                        final product = products[index];
-                        return Column(
-                          children: [
-                            buildProduct(product, index),
-                            const Divider(),
-                          ],
-                        );
-                      },
-                    ),
-            ),
+                child: wait
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                          strokeWidth: 4,
+                        ),
+                      )
+                    : ListView.builder(
+                        itemCount: products.length,
+                        itemBuilder: (context, index) {
+                          final product = products[index];
+                          return Column(
+                            children: [
+                              buildProduct(product, index),
+                              const Divider(),
+                            ],
+                          );
+                        },
+                      )),
           ],
-        ),
-      );
+        );
+      }));
 
   Widget buildProduct(Product product, index) => ListTile(
         leading: Text(
