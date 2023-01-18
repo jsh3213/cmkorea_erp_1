@@ -105,5 +105,5 @@ msix_config:
   identity_name: bnw.erp.cmkorea
   publisher : xyz
   msix_version: 1.0.0.0
-  # logo_path: /Users/cm/program/test/cmkorea_erp
+  logo_path: C:\Users\JS\erp\cmkorea_erp\assets\logo.png
   capabilities: internetClient, location
