@@ -53,6 +53,7 @@ dev_dependencies:
   day_night_time_picker: ^1.1.3
   timer_builder: ^2.0.0
   audioplayers: ^2.0.0
+  msix: ^3.7.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -96,3 +97,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+
+msix_config:
+  display_name: CMKOREA (ERP)
+  publisher_display_name: B&W 
+  identity_name: bnw.erp.cmkorea
+  publisher : xyz
+  msix_version: 1.0.0.0
+  # logo_path: /Users/cm/program/test/cmkorea_erp
+  capabilities: internetClient, location

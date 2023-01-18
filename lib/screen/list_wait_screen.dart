@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../model/product.dart';
 import '../api/product_api.dart';
-import 'package:timer_builder/timer_builder.dart';
+import 'setting_screen.dart';
 
 class ListWaitScreen extends StatefulWidget {
   const ListWaitScreen({super.key});
@@ -20,16 +20,19 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
   static List<Product> products = [];
   String query = '';
   bool status = true;
-  static Timer? _timer;
+  static Timer? waitTimer;
+  var duration = const Duration(seconds: 2);
 
   @override
   void initState() {
+    waitTimer?.cancel();
     super.initState();
     init();
   }
 
   @override
   void dispose() {
+    waitTimer?.cancel();
     super.dispose();
   }
 
@@ -44,13 +47,14 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
           .toList();
     });
     setState(() => status = false);
-    _timer = Timer.periodic(const Duration(seconds: 60), (timer) {
+    waitTimer = Timer.periodic(const Duration(seconds: 60), (timer) {
       getList();
     });
   }
 
   void getList() async {
     var response = await ProductApi.productList();
+    sleep(duration);
     setState(() {
       products = response
           .where((element) =>
@@ -63,15 +67,21 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: Text('수리 타입 결정(대기) 수량: ${products.length}'),
-        centerTitle: true,
-        leading: IconButton(
-            onPressed: () {
-              Get.to(() => const ListScreen());
-            },
-            icon: const Icon(Icons.add)),
-      ),
+          backgroundColor: Colors.green,
+          title: Text('수리 타입 결정(대기) 수량: ${products.length}'),
+          centerTitle: true,
+          leading: IconButton(
+              onPressed: () {
+                Get.to(() => const ListScreen());
+              },
+              icon: const Icon(Icons.add)),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Get.to(() => const SettingScreen());
+                },
+                icon: const Icon(Icons.settings))
+          ]),
       body: Column(
         children: <Widget>[
           Expanded(

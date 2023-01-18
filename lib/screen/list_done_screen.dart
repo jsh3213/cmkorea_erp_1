@@ -68,22 +68,29 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
       wait = false;
     });
 
-    _timer1 = Timer.periodic(const Duration(seconds: 2), (timer) {
-      setState(() {
-        colorChange = !colorChange;
+    if (controller.settingColor.value == true) {
+      _timer1 = Timer.periodic(const Duration(seconds: 2), (timer) {
+        setState(() {
+          colorChange = !colorChange;
+        });
+        controller.colorChange.value = colorChange;
+        if (products.isEmpty) {
+          _timer1?.cancel();
+          controller.colorChange.value = false;
+        }
       });
-      controller.colorChange.value = colorChange;
-      if (products.isEmpty) {
-        _timer1?.cancel();
-        controller.colorChange.value = false;
+    }
+    if (controller.settingAlarm.value == true) {
+      if (controller.settingAlarm.value == true) {
+        _timer2 = Timer.periodic(const Duration(seconds: 60), (timer) {
+          if (products.isEmpty) {
+            _timer2?.cancel();
+          } else {
+            player.play(AssetSource('dingdong.mp3'));
+          }
+        });
       }
-    });
-    _timer2 = Timer.periodic(const Duration(seconds: 60), (timer) {
-      player.play(AssetSource('dingdong.mp3'));
-      if (products.isEmpty) {
-        _timer2?.cancel();
-      }
-    });
+    }
 
     _timer3 = Timer.periodic(const Duration(seconds: 60), (timer) {
       getList();
