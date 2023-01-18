@@ -1,0 +1,14 @@
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/icudtl.dat
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/flutter_windows.dll
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/audioplayers_windows_plugin.dll
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/AssetManifest.bin
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/AssetManifest.json
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/assets/dingdong.mp3
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/FontManifest.json
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/NOTICES.Z
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/packages/day_night_time_picker/assets/moon.png
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/packages/day_night_time_picker/assets/sun.png
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/flutter_assets/shaders/ink_sparkle.frag
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/Release/data/app.so

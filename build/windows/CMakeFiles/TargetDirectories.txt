@@ -1,0 +1,13 @@
+C:/Users/JS/erp/cmkorea_erp/build/windows/CMakeFiles/INSTALL.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/CMakeFiles/ALL_BUILD.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/CMakeFiles/ZERO_CHECK.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/flutter/CMakeFiles/flutter_wrapper_app.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/flutter/CMakeFiles/flutter_assemble.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/flutter/CMakeFiles/INSTALL.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/CMakeFiles/cmkorea_erp.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/CMakeFiles/INSTALL.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/runner/CMakeFiles/ALL_BUILD.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/plugins/audioplayers_windows/CMakeFiles/audioplayers_windows_plugin.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/plugins/audioplayers_windows/CMakeFiles/INSTALL.dir
+C:/Users/JS/erp/cmkorea_erp/build/windows/plugins/audioplayers_windows/CMakeFiles/ALL_BUILD.dir
