@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <AppInstaller xmlns="http://schemas.microsoft.com/appx/appinstaller/2018"
+    Uri="C:\Users\JS\erp\cmkorea_erp/cmkorea_erp.appinstaller" Version="1.0.1.2">
+    <MainPackage Name="BnW.cmkorea.erp" Version="1.0.1.2"
+      Publisher="CN=Msix Testing, O=Msix Testing Corporation, S=Some-State, C=US"
+      Uri="C:\Users\JS\erp\cmkorea_erp/versions/cmkorea_erp_1.0.1.2.msix"
+      ProcessorArchitecture="x64" />
+    <UpdateSettings>
+      <OnLaunch HoursBetweenUpdateChecks="0" 
+        UpdateBlocksActivation="true" ShowPrompt="true" />
+        <AutomaticBackgroundTask />
+        </UpdateSettings>
+  </AppInstaller>

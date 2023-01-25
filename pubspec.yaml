@@ -100,12 +100,17 @@ flutter:
 
 msix_config:
   display_name: CMKOREA (ERP)
+  publisher_display_name: B&W
+  identity_name: BnW.cmkorea.erp
+  msix_version: 1.0.0.2
+  logo_path: C:\Users\JS\erp\cmkorea_erp\assets\logo.png
+  capabilities: "internetClient,location,microphone,webcam"
+
+
   app_installer: #<-- app installer configuration
-    publish_folder_path: \home\cmkorea\cmkorea\build\windows\runner\Release
+    publish_folder_path: C:\Users\JS\erp\cmkorea_erp
     hours_between_update_checks: 0
     automatic_background_task: true
     update_blocks_activation: true
     show_prompt: true
     force_update_from_any_version: false
-    logo_path: C:\Users\JS\erp\cmkorea_erp\assets\logo.png
-  msix_version: 1.0.0.0
