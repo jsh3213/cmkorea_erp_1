@@ -1,11 +1,9 @@
-import 'package:cmkorea_erp/screen/list_done_screen.dart';
-import 'package:cmkorea_erp/screen/time_screen.dart';
+import 'package:cmkorea_erp/screen/operationRequest/operation_main_screen.dart';
+import 'package:cmkorea_erp/screen/productionSche/productionSchedule_screen.dart';
+import 'package:cmkorea_erp/screen/repairDecide/repairTypeDecide_screen.dart';
 import 'package:flutter/material.dart';
 import 'model/product.dart';
-import 'screen/list_wait_screen.dart';
-// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
-import 'package:timer_builder/timer_builder.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +30,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Product> products = [];
+  final List _tabList = [
+    '수리타입 결정',
+    '작업 요청 리스트',
+    '생산 계획',
+  ];
 
   @override
   void initState() {
@@ -40,48 +43,39 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: TimerBuilder.periodic(const Duration(seconds: 5),
-            builder: (context) {
-      return Container(
-        margin: const EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Expanded(flex: 1, child: TimeScreen()),
-            const Divider(),
-            Expanded(
-              flex: 4,
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                        margin: const EdgeInsets.all(5.0),
-                        padding: const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1, color: Colors.orange),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const ListWaitScreen()),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Container(
-                        margin: const EdgeInsets.all(5.0),
-                        padding: const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1, color: Colors.blue),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const ListDoneScreen()),
-                  ),
-                ],
+    // ignore: prefer_const_constructors
+    return DefaultTabController(
+      length: _tabList.length,
+      child: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              TabBar(
+                // isScrollable: true,
+                labelColor: Colors.blue,
+                unselectedLabelColor: Colors.grey,
+                tabs: List.generate(
+                  _tabList.length,
+                  (int index) {
+                    return Tab(
+                      height: 50,
+                      text: _tabList[index],
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+              const Expanded(
+                  child: TabBarView(
+                children: [
+                  RepairTypeDecideScreen(),
+                  OperationMainScreen(),
+                  ScheduleScreen(),
+                ],
+              ))
+            ],
+          ),
         ),
-      );
-    }));
+      ),
+    );
   }
 }

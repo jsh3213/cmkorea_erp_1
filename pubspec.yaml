@@ -53,7 +53,9 @@ dev_dependencies:
   day_night_time_picker: ^1.1.3
   timer_builder: ^2.0.0
   audioplayers: ^2.0.0
-  msix: ^3.7.0
+  table_calendar: ^3.0.9
+  syncfusion_flutter_datepicker: ^20.4.43
+  # msix: ^3.7.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -98,19 +100,19 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-msix_config:
-  display_name: CMKOREA (ERP)
-  publisher_display_name: B&W
-  identity_name: BnW.cmkorea.erp
-  msix_version: 1.0.0.2
-  logo_path: C:\Users\JS\erp\cmkorea_erp\assets\logo.png
-  capabilities: "internetClient,location,microphone,webcam"
+# msix_config:
+#   display_name: CMKOREA (ERP)
+#   publisher_display_name: B&W
+#   identity_name: BnW.cmkorea.erp
+#   msix_version: 1.0.0.2
+#   logo_path: C:\Users\JS\erp\cmkorea_erp\assets\logo.png
+#   capabilities: "internetClient,location,microphone,webcam"
 
 
-  app_installer: #<-- app installer configuration
-    publish_folder_path: C:\Users\JS\erp\cmkorea_erp
-    hours_between_update_checks: 0
-    automatic_background_task: true
-    update_blocks_activation: true
-    show_prompt: true
-    force_update_from_any_version: false
+#   app_installer: #<-- app installer configuration
+#     publish_folder_path: C:\Users\JS\erp\cmkorea_erp
+#     hours_between_update_checks: 0
+#     automatic_background_task: true
+#     update_blocks_activation: true
+#     show_prompt: true
+#     force_update_from_any_version: false
