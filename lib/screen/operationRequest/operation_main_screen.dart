@@ -21,11 +21,12 @@ class _OperationMainScreenState extends State<OperationMainScreen> {
         body: SafeArea(
           child: Column(
             children: [
-              const SizedBox(
-                height: 70,
-              ),
+              const SizedBox(height: 70),
               TabBar(
-                // isScrollable: true,
+                labelStyle: const TextStyle(
+                    fontSize: 22.0, fontWeight: FontWeight.bold),
+                unselectedLabelStyle: const TextStyle(fontSize: 15.0),
+                indicatorColor: Colors.black,
                 labelColor: Colors.black,
                 unselectedLabelColor: Colors.grey,
                 tabs: List.generate(

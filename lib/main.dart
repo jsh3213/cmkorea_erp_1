@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List _tabList = [
     '수리타입 결정',
     '작업 요청 리스트',
-    '생산 계획',
+    // '생산 계획',
   ];
 
   @override
@@ -51,7 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: [
               TabBar(
-                // isScrollable: true,
+                labelStyle: const TextStyle(
+                    fontSize: 22.0, fontWeight: FontWeight.bold),
+                unselectedLabelStyle: const TextStyle(fontSize: 15.0),
                 labelColor: Colors.blue,
                 unselectedLabelColor: Colors.grey,
                 tabs: List.generate(
@@ -69,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   RepairTypeDecideScreen(),
                   OperationMainScreen(),
-                  ScheduleScreen(),
+                  // ScheduleScreen(),
                 ],
               ))
             ],

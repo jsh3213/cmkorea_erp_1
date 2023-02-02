@@ -139,7 +139,6 @@ class _UpdateOperationScreenState extends State<UpdateOperationScreen> {
                       ],
                     ),
                     buildText('상태 : ', _state, _list),
-                    const Divider(),
                     Column(children: [
                       buildTextField('작성자 : ', controllerRequester),
                       const SizedBox(height: 10),
