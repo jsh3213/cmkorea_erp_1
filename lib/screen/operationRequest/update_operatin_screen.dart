@@ -203,7 +203,7 @@ class _UpdateOperationScreenState extends State<UpdateOperationScreen> {
                               content: TextField(
                                 controller: controllerText,
                                 decoration: const InputDecoration(
-                                    labelText: "cmk 입력하세요."),
+                                    labelText: "password 입력하세요."),
                                 textInputAction: TextInputAction.done,
                               ),
                               confirmTextColor: Colors.white,

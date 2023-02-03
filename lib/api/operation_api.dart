@@ -42,8 +42,8 @@ class OperationApi {
   static Future operationCreate(
     String place,
     String state,
-    String note,
     String requester,
+    String note,
     String completer,
   ) async {
     int statusCode = 0;

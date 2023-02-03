@@ -12,7 +12,7 @@ class OperationMainScreen extends StatefulWidget {
 
 class _OperationMainScreenState extends State<OperationMainScreen> {
   List<Product> products = [];
-  final List _tabList = ['103호', '104호', '108호', '109호'];
+  final List _tabList = ['103호', '104호', '108호', '109호', '구매 요청'];
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -46,6 +46,7 @@ class _OperationMainScreenState extends State<OperationMainScreen> {
                   buildView('104호'),
                   buildView('108호'),
                   buildView('109호'),
+                  buildView('구매 요청'),
                 ],
               ))
             ],
