@@ -118,26 +118,31 @@ class OperationCompleteListScreenState
         });
       });
 
-  Widget buildOperation(Operation operation, index) => ListTile(
-        leading: Text("${index + 1}"),
-        title: Row(
-          children: [
-            Text(
-              operation.note,
+  Widget buildOperation(Operation operation, index) => Column(
+        children: [
+          ListTile(
+            leading: Text("${index + 1}"),
+            title: Row(
+              children: [
+                Text(
+                  operation.note,
+                ),
+                const SizedBox(width: 10),
+              ],
             ),
-            const SizedBox(width: 10),
-          ],
-        ),
-        subtitle: Text(
-          operation.state,
-        ),
-        onTap: () {
-          Get.to(() => UpdateOperationScreen(operation: operation))
-              ?.then((value) {
-            setState(() {
-              init();
-            });
-          });
-        },
+            subtitle: Text(
+              operation.state,
+            ),
+            onTap: () {
+              Get.to(() => UpdateOperationScreen(operation: operation))
+                  ?.then((value) {
+                setState(() {
+                  init();
+                });
+              });
+            },
+          ),
+          const Divider()
+        ],
       );
 }

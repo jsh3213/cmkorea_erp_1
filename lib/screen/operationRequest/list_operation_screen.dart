@@ -118,12 +118,6 @@ class OperationRequestListScreenState
             ],
           ),
         ),
-        // floatingActionButton: FloatingActionButton(
-        //     onPressed: () {
-        //       Get.toNamed('/create');
-        //     },
-        //     tooltip: 'Crate',
-        //     child: Icon(Icons.add)),
       );
 
   Widget buildSearch() => SearchWidget(
@@ -144,25 +138,30 @@ class OperationRequestListScreenState
         });
       });
 
-  Widget buildOperation(Operation operation, index) => ListTile(
-        leading: Text("${index + 1}"),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(operation.note),
-            Text(operation.state),
-          ],
-        ),
-        subtitle: Text(
-          '담당자 : ${operation.completer}',
-        ),
-        onTap: () {
-          Get.to(() => UpdateOperationScreen(operation: operation))
-              ?.then((value) {
-            setState(() {
-              init();
-            });
-          });
-        },
+  Widget buildOperation(Operation operation, index) => Column(
+        children: [
+          ListTile(
+            leading: Text("${index + 1}"),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(operation.note),
+                Text(operation.state),
+              ],
+            ),
+            subtitle: Text(
+              '담당자 : ${operation.completer}',
+            ),
+            onTap: () {
+              Get.to(() => UpdateOperationScreen(operation: operation))
+                  ?.then((value) {
+                setState(() {
+                  init();
+                });
+              });
+            },
+          ),
+          const Divider(),
+        ],
       );
 }
