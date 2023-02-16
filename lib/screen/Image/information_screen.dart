@@ -28,26 +28,28 @@ class InformationScreenState extends State<InformationScreen> {
           Expanded(
             flex: 1,
             child: Container(
-              margin: const EdgeInsets.all(10.0),
-              padding: const EdgeInsets.all(10.0),
-              decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Colors.black),
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.green,
-                      child: Text('${index + 1}'),
-                    ),
-                    title: Text('List Item ${index + 1}'),
-                    subtitle: Text('Subtitle ${index + 1}'),
-                  );
-                },
-              ),
-            ),
+                // margin: const EdgeInsets.all(10.0),
+                // padding: const EdgeInsets.all(10.0),
+                // decoration: BoxDecoration(
+                //   border: Border.all(width: 1, color: Colors.black),
+                //   borderRadius: BorderRadius.circular(5),
+                // ),
+                // child: Expanded(
+                //   child: ListView.builder(
+                //     itemCount: 10,
+                //     itemBuilder: (BuildContext context, int index) {
+                //       return ListTile(
+                //         leading: CircleAvatar(
+                //           backgroundColor: Colors.green,
+                //           child: Text('${index + 1}'),
+                //         ),
+                //         title: Text('List Item ${index + 1}'),
+                //         subtitle: Text('Subtitle ${index + 1}'),
+                //       );
+                //     },
+                //   ),
+                // ),
+                ),
           ),
         ],
       ),
