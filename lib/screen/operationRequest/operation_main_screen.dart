@@ -40,15 +40,16 @@ class _OperationMainScreenState extends State<OperationMainScreen> {
               ),
               const SizedBox(height: 10),
               Expanded(
-                  child: TabBarView(
-                children: [
-                  buildView('103호'),
-                  buildView('104호'),
-                  buildView('108호'),
-                  buildView('109호'),
-                  buildView('구매 요청'),
-                ],
-              ))
+                child: TabBarView(
+                  children: [
+                    buildView('103호'),
+                    buildView('104호'),
+                    buildView('108호'),
+                    buildView('109호'),
+                    buildView('구매 요청'),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

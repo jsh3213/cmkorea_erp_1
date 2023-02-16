@@ -30,10 +30,11 @@ class _UpDateScreenState extends State<UpdateScreen> {
   final controller = Get.put(ReactiveController());
 
   final List<String> _list = [
-    '확인',
+    '수리타입 확인',
     '대기',
+    '진행 중',
     '현업 대기',
-    '완료',
+    '수리타입 결정',
   ];
 
   @override

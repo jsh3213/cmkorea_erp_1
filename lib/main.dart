@@ -1,3 +1,4 @@
+import 'package:cmkorea_erp/screen/Image/main_screen.dart';
 import 'package:cmkorea_erp/screen/operationRequest/operation_main_screen.dart';
 import 'package:cmkorea_erp/screen/productionSche/productionSchedule_screen.dart';
 import 'package:cmkorea_erp/screen/repairDecide/repairTypeDecide_screen.dart';
@@ -33,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List _tabList = [
     '수리타입 결정',
     '작업 요청 리스트',
+    '사진 & 자료',
     // '생산 계획',
   ];
 
@@ -71,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   RepairTypeDecideScreen(),
                   OperationMainScreen(),
+                  UploadMainScreen(),
                   // ScheduleScreen(),
                 ],
               ))

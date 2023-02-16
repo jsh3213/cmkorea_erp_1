@@ -33,8 +33,6 @@ class _UpdateOperationScreenState extends State<UpdateOperationScreen> {
     super.initState();
   }
 
-  TextEditingController controllerText = TextEditingController();
-
   void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
     setState(() {
       if (args.value is PickerDateRange) {
@@ -57,6 +55,8 @@ class _UpdateOperationScreenState extends State<UpdateOperationScreen> {
   TextEditingController controllerRequester = TextEditingController();
   TextEditingController controllerCompleter = TextEditingController();
   TextEditingController controllerDoneDate = TextEditingController();
+
+  TextEditingController controllerText = TextEditingController();
 
   String _doneDate = '';
   late Operation _operation;
@@ -198,7 +198,7 @@ class _UpdateOperationScreenState extends State<UpdateOperationScreen> {
                         ElevatedButton(
                           onPressed: () {
                             Get.defaultDialog(
-                              title: 'S/N: ${widget.operation.state}',
+                              title: widget.operation.state,
                               // titleStyle: TextStyle(fontSize: 15),
                               content: TextField(
                                 controller: controllerText,

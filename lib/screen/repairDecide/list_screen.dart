@@ -132,27 +132,27 @@ class FilterNetworkListPageState extends State<ListScreen> {
         onTap: () {
           Get.off(() => UpdateScreen(product: products[index]));
         },
-        trailing: IconButton(
-          icon: const Icon(Icons.delete),
-          onPressed: () {
-            Get.defaultDialog(
-              title: 'S/N: ${products[index].serialNumber}',
-              // titleStyle: TextStyle(fontSize: 15),
-              content: TextField(
-                controller: controller,
-                decoration: const InputDecoration(labelText: "cmk 입력하세요."),
-                textInputAction: TextInputAction.done,
-              ),
-              confirmTextColor: Colors.white,
-              textCancel: "취소",
-              textConfirm: "삭제",
+        // trailing: IconButton(
+        //   icon: const Icon(Icons.delete),
+        //   onPressed: () {
+        //     Get.defaultDialog(
+        //       title: 'S/N: ${products[index].serialNumber}',
+        //       // titleStyle: TextStyle(fontSize: 15),
+        //       content: TextField(
+        //         controller: controller,
+        //         decoration: const InputDecoration(labelText: "cmk 입력하세요."),
+        //         textInputAction: TextInputAction.done,
+        //       ),
+        //       confirmTextColor: Colors.white,
+        //       textCancel: "취소",
+        //       textConfirm: "삭제",
 
-              onCancel: () {
-                controller.text = "";
-                Get.back();
-              },
-            );
-          },
-        ),
+        //       onCancel: () {
+        //         controller.text = "";
+        //         Get.back();
+        //       },
+        //     );
+        //   },
+        // ),
       );
 }

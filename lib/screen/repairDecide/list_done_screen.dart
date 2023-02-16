@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:cmkorea_erp/screen/repairDecide/list_check_screen.dart';
 import 'package:cmkorea_erp/screen/repairDecide/update_screen.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
@@ -61,7 +62,7 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
     var response = await ProductApi.productList();
     setState(() {
       products = response
-          .where((element) => element.repairTypeDecide == '완료')
+          .where((element) => element.repairTypeDecide == '수리타입 결정')
           .toList();
     });
     setState(() {
@@ -101,7 +102,7 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
     var response = await ProductApi.productList();
     setState(() {
       products = response
-          .where((element) => element.repairTypeDecide == '완료')
+          .where((element) => element.repairTypeDecide == '수리타입 결정')
           .toList();
     });
   }
@@ -113,6 +114,13 @@ class FilterNetworkListPageState extends State<ListDoneScreen> {
         title: Text('수리 타입 결정(완료)  수량: ${products.length}'),
         centerTitle: true,
         leading: Container(),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Get.to(const ListCheckScreen());
+              },
+              icon: const Icon(Icons.list))
+        ],
       ),
       body: Column(
         children: <Widget>[

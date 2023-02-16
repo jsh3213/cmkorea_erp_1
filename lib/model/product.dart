@@ -59,10 +59,10 @@ class Product {
       barCode: json['barCode'] ?? '',
       repairDone: json['repairDone'] ?? false,
       repairTypeDecide: json['repairTypeDecide'] ?? '선택',
-      inImage: ((json['inImages'] ?? []) as List)
+      inImage: ((json['inimages'] ?? []) as List)
           .map((map) => InImage.fromJson(map))
           .toList(),
-      outImage: ((json['outImages'] ?? []) as List)
+      outImage: ((json['outimages'] ?? []) as List)
           .map((map) => OutImage.fromJson(map))
           .toList(),
     );

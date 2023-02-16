@@ -31,7 +31,6 @@ class _CreateOperationScreenState extends State<CreateOperationScreen> {
 
   String _state = '요청';
   String _place = '';
-
   bool wait = false;
   final controller = Get.put(ReactiveController());
 

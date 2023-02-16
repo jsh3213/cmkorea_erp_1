@@ -100,10 +100,9 @@ class OperationRequestListScreenState
               Expanded(
                 child: status
                     ? const Center(
-                        child: CircularProgressIndicator(
-                          // valueColor: AlwaysStoppedAnimation(Colors.green),
-                          // backgroundColor: Colors.grey,
-                          strokeWidth: 4,
+                        child: LinearProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation(Colors.blue),
+                          backgroundColor: Colors.white,
                         ),
                       )
                     : ListView.builder(
@@ -141,7 +140,11 @@ class OperationRequestListScreenState
   Widget buildOperation(Operation operation, index) => Column(
         children: [
           ListTile(
-            leading: Text("${index + 1}"),
+            leading: CircleAvatar(
+              backgroundColor: Colors.green,
+              foregroundColor: Colors.white,
+              child: Text("${index + 1}"),
+            ),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

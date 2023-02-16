@@ -43,7 +43,8 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
       products = response
           .where((element) =>
               element.repairTypeDecide == '대기' ||
-              element.repairTypeDecide == '현업 대기')
+              element.repairTypeDecide == '현업 대기' ||
+              element.repairTypeDecide == '진행 중')
           .toList();
     });
     setState(() => status = false);
@@ -108,8 +109,10 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
       ));
 
   Widget buildList(Product product, index) => ListTile(
-        leading: Text(
-          "${index + 1}",
+        leading: CircleAvatar(
+          backgroundColor: Colors.green,
+          foregroundColor: Colors.white,
+          child: Text("${index + 1}"),
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
