@@ -1,4 +1,4 @@
-import 'package:cmkorea_erp/screen/Image/main_screen.dart';
+import 'package:cmkorea_erp/screen/dataUpload/main_list_screen.dart';
 import 'package:cmkorea_erp/screen/operationRequest/operation_main_screen.dart';
 import 'package:cmkorea_erp/screen/productionSche/productionSchedule_screen.dart';
 import 'package:cmkorea_erp/screen/repairDecide/repairTypeDecide_screen.dart';
@@ -31,12 +31,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Product> products = [];
-  final List _tabList = [
-    '수리타입 결정',
-    '작업 요청 리스트',
-    '사진 & 자료',
-    // '생산 계획',
-  ];
 
   @override
   void initState() {
@@ -47,25 +41,29 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return DefaultTabController(
-      length: _tabList.length,
+      length: 3,
       child: Scaffold(
         body: SafeArea(
           child: Column(
+            // ignore: prefer_const_literals_to_create_immutables
             children: [
-              TabBar(
-                labelStyle: const TextStyle(
-                    fontSize: 22.0, fontWeight: FontWeight.bold),
-                unselectedLabelStyle: const TextStyle(fontSize: 15.0),
-                labelColor: Colors.blue,
-                unselectedLabelColor: Colors.grey,
-                tabs: List.generate(
-                  _tabList.length,
-                  (int index) {
-                    return Tab(
-                      height: 50,
-                      text: _tabList[index],
-                    );
-                  },
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: TabBar(
+                    labelStyle:
+                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                    unselectedLabelStyle: TextStyle(fontSize: 18.0),
+                    labelColor: Colors.blue,
+                    unselectedLabelColor: Colors.grey,
+                    isScrollable: true,
+                    tabs: [
+                      Text('수리타입 결정'),
+                      Text('작업 요청 리스트'),
+                      Text('사진 & 자료'),
+                    ],
+                  ),
                 ),
               ),
               const Expanded(
@@ -74,7 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   RepairTypeDecideScreen(),
                   OperationMainScreen(),
                   UploadMainScreen(),
-                  // ScheduleScreen(),
                 ],
               ))
             ],

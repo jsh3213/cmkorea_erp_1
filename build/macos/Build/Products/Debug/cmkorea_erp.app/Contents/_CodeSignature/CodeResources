@@ -23,28 +23,28 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			C7x0iJGHs0IB9zrnhWBLXFPM5Wo=
+			ACru9axLY+dAwB6YUGSl1zqwG/g=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"0bbc74889187b34201f73ae785604b5c53cce56a"</string>
+			<string>cdhash H"002aeef5ac4b63e740c01e985064a5d73ab01bf8"</string>
 		</dict>
 		<key>Frameworks/FlutterMacOS.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			sE6Ue6uIUet2eXOz9XS/wxK8ups=
+			IR6sUg7fj8b2v6Xc9fDtCjt0Iyk=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"b04e947bab8851eb767973b3f574bfc312bcba9b"</string>
+			<string>cdhash H"211eac520edf8fc6f6bfa5dcf5f0ed0a3b742329"</string>
 		</dict>
 		<key>Frameworks/audioplayers_darwin.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			zG2qDQ70+jLxKCfLChdD9EZUhAA=
+			G7YzJEpvtRi/ODLYwNcrOyWxZgI=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"cc6daa0d0ef4fa32f12827cb0a1743f446548400"</string>
+			<string>cdhash H"1bb633244a6fb518bf3832d8c0d72b3b25b16602"</string>
 		</dict>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<dict>
@@ -221,10 +221,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			oYY1nk4vck6kVnfdrMLK/9qxKis=
+			QOEbLDu2KMUBQ8zfqcDOskzhosg=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"a186359e4e2f724ea45677ddacc2caffdab12a2b"</string>
+			<string>cdhash H"40e11b2c3bb628c50143ccdfa9c0ceb24ce1a2c8"</string>
 		</dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>

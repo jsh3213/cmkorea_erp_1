@@ -1,8 +1,9 @@
 import 'package:cmkorea_erp/api/product_api.dart';
 import 'package:cmkorea_erp/model/product.dart';
-import 'package:cmkorea_erp/screen/Image/index_screen.dart';
+import 'package:cmkorea_erp/screen/repairDecide/update_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class ListCheckScreen extends StatefulWidget {
   const ListCheckScreen({super.key});
@@ -111,9 +112,14 @@ class _ListCheckScreenState extends State<ListCheckScreen> {
                   itemCount: products.length,
                   itemBuilder: (BuildContext context, int index) {
                     final product = products[index];
+                    DateTime output = DateTime.parse(product.updated);
+                    String date = DateFormat(
+                            '확인일 : yyyy년 MM월 dd일 \n .          (HH시 mm분 ss초)')
+                        .format(output.toLocal());
+
                     return Column(
                       children: [
-                        buildProduct(product, index),
+                        buildProduct(product, index, date),
                         const Divider(),
                       ],
                     );
@@ -127,7 +133,7 @@ class _ListCheckScreenState extends State<ListCheckScreen> {
     );
   }
 
-  Widget buildProduct(Product product, index) => ListTile(
+  Widget buildProduct(Product product, index, date) => ListTile(
         leading: Text(
           "${index + 1}",
         ),
@@ -150,9 +156,12 @@ class _ListCheckScreenState extends State<ListCheckScreen> {
           product.model,
         ),
         onTap: () {
-          Get.to(() => UpdateScreen(
-                product: products[index],
-              ));
+          Get.to(
+            () => UpdateScreen(
+              product: products[index],
+            ),
+          );
         },
+        trailing: Text(date),
       );
 }
