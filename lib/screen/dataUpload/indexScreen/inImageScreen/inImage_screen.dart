@@ -38,9 +38,12 @@ class _InImageScreenState extends State<InImageScreen> {
   Future init() async {
     final response = await ProductApi.productDetail(widget.product.id);
 
-    setState(() {
-      widget.product = response;
-    });
+    if (mounted) {
+      // 여기서 위젯의 dispose 상태를 확인
+      setState(() {
+        widget.product = response;
+      });
+    }
   }
 
   @override
@@ -50,6 +53,20 @@ class _InImageScreenState extends State<InImageScreen> {
     double height = screenSize.height;
 
     return Scaffold(
+      appBar: AppBar(
+        // AppBar 추가
+        backgroundColor: Colors.blue,
+        title: const Text('제품 이미지'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: () {
+              init();
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: [
           Expanded(

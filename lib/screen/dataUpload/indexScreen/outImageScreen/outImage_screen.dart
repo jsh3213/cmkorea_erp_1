@@ -36,8 +36,7 @@ class _OutImageScreenState extends State<OutImageScreen> {
   late List<Product> images;
 
   Future init() async {
-    final response = await ProductApi.productDetail(widget.product.id);
-
+    var response = await ProductApi.productDetail(widget.product.id);
     setState(() {
       widget.product = response;
     });
@@ -50,6 +49,20 @@ class _OutImageScreenState extends State<OutImageScreen> {
     double height = screenSize.height;
 
     return Scaffold(
+      appBar: AppBar(
+        // AppBar 추가
+        backgroundColor: Colors.blue,
+        title: const Text('제품 이미지'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: () {
+              init();
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: [
           Expanded(
@@ -61,7 +74,7 @@ class _OutImageScreenState extends State<OutImageScreen> {
                 border: Border.all(width: 1, color: Colors.black),
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: widget.product.inImage.isEmpty
+              child: widget.product.outImage.isEmpty
                   ? const Center(
                       child: Text('No Images'),
                     )

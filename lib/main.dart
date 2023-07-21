@@ -42,12 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
     // ignore: prefer_const_constructors
     return DefaultTabController(
       length: 3,
-      child: Scaffold(
+      child: const Scaffold(
         body: SafeArea(
           child: Column(
             // ignore: prefer_const_literals_to_create_immutables
             children: [
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              const Expanded(
+              Expanded(
                   child: TabBarView(
                 children: [
                   RepairTypeDecideScreen(),
