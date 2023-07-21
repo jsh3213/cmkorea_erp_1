@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "runner/Debug/cmkorea_erp.exe"
+			"path" : "runner/Release/cmkorea_erp.exe"
 		},
 		{
-			"path" : "runner/Debug/cmkorea_erp.pdb"
+			"path" : "runner/Release/cmkorea_erp.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -140,12 +140,6 @@
 			{
 				"command" : 6,
 				"file" : 1,
-				"line" : 45,
-				"parent" : 9
-			},
-			{
-				"command" : 6,
-				"file" : 1,
 				"line" : 44,
 				"parent" : 9
 			},
@@ -169,7 +163,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG"
 				},
 				{
 					"backtrace" : 10,
@@ -223,10 +217,6 @@
 				},
 				{
 					"backtrace" : 19,
-					"define" : "_DEBUG"
-				},
-				{
-					"backtrace" : 20,
 					"define" : "_HAS_EXCEPTIONS=0"
 				},
 				{
@@ -237,7 +227,7 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 21,
+					"backtrace" : 20,
 					"path" : "C:/Users/JS/git/erp/windows"
 				},
 				{
@@ -258,7 +248,7 @@
 			{
 				"backtraces" : 
 				[
-					22
+					21
 				],
 				"standard" : "17"
 			},
@@ -275,7 +265,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-DWIN32 -D_DEBUG"
+					"fragment" : "-DWIN32"
 				}
 			],
 			"defines" : 
@@ -310,10 +300,6 @@
 				},
 				{
 					"backtrace" : 19,
-					"define" : "_DEBUG"
-				},
-				{
-					"backtrace" : 20,
 					"define" : "_HAS_EXCEPTIONS=0"
 				},
 				{
@@ -324,7 +310,7 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 21,
+					"backtrace" : 20,
 					"path" : "C:/Users/JS/git/erp/windows"
 				},
 				{
@@ -350,12 +336,12 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 4,
-			"id" : "flutter_wrapper_app::@2bb09fbb03a373b2cb34"
-		},
-		{
 			"backtrace" : 8,
 			"id" : "flutter_assemble::@2bb09fbb03a373b2cb34"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "flutter_wrapper_app::@2bb09fbb03a373b2cb34"
 		},
 		{
 			"backtrace" : 0,
@@ -372,7 +358,7 @@
 		[
 			{
 				"backtrace" : 3,
-				"path" : "C:/Users/JS/git/erp/build/windows/runner/Debug"
+				"path" : "C:/Users/JS/git/erp/build/windows/runner/Release"
 			}
 		],
 		"prefix" : 
@@ -385,16 +371,16 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:windows",
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:windows",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "..\\flutter\\Debug\\flutter_wrapper_app.lib",
+				"fragment" : "..\\flutter\\Release\\flutter_wrapper_app.lib",
 				"role" : "libraries"
 			},
 			{
@@ -404,7 +390,7 @@
 			},
 			{
 				"backtrace" : 0,
-				"fragment" : "..\\plugins\\audioplayers_windows\\Debug\\audioplayers_windows_plugin.lib",
+				"fragment" : "..\\plugins\\audioplayers_windows\\Release\\audioplayers_windows_plugin.lib",
 				"role" : "libraries"
 			},
 			{

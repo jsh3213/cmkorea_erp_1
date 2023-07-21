@@ -81,7 +81,7 @@ class ImageUploadScreenState extends State<ImageUploadScreen> {
               padding: const EdgeInsets.all(20.0),
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 6,
+                    crossAxisCount: 5,
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 10),
                 itemCount: _images!.length,
