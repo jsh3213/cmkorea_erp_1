@@ -22,7 +22,8 @@ class OutImageDownloadScreen extends StatefulWidget {
 }
 
 class _OutImageDownloadScreenState extends State<OutImageDownloadScreen> {
-  late List<bool> _isSelected;
+  late List<bool> _isSelected =
+      List.filled(widget.product.outImage.length, false);
   bool wait = false;
 
   @override
@@ -69,13 +70,13 @@ class _OutImageDownloadScreenState extends State<OutImageDownloadScreen> {
       setState(() => wait = false);
       return;
     }
-    var directory = Directory(directoryPath).parent;
+    var directory = Directory(directoryPath);
     await directory.create(recursive: true);
     for (int i = 0; i < selecteImage.length; i++) {
       var response = await http.get(Uri.parse(
           '$baseUrl/api${widget.product.outImage[selecteImage[i]].image}'));
-      File file = File(
-          "${directory.path}/${widget.product.serialNumber}_출고 이미지_$i.jpg");
+      File file =
+          File("${directory.path}/${widget.product.serialNumber}_Image_$i.jpg");
       await file.writeAsBytes(response.bodyBytes);
     }
     _isSelected = List.filled(widget.product.outImage.length, false);
@@ -97,7 +98,7 @@ class _OutImageDownloadScreenState extends State<OutImageDownloadScreen> {
           : Column(
               children: [
                 Expanded(
-                  flex: 6,
+                  flex: 5,
                   child: Container(
                     margin: const EdgeInsets.all(5.0),
                     padding: const EdgeInsets.all(5),

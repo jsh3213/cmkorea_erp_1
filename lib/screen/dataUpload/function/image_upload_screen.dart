@@ -46,6 +46,7 @@ class ImageUploadScreenState extends State<ImageUploadScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue,
         title: Text('${widget.product.serialNumber} 이미지 업로드'),
         centerTitle: true,
         actions: [
@@ -76,20 +77,25 @@ class ImageUploadScreenState extends State<ImageUploadScreen> {
       ),
       body: _images!.isEmpty
           ? const Center(child: Text('이미지 선택해 주세요!'))
-          : GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2),
-              itemCount: _images!.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Column(
-                  children: [
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    previewImages(index, width, height)
-                  ],
-                );
-              },
+          : Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 6,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 10),
+                itemCount: _images!.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      previewImages(index, width, height)
+                    ],
+                  );
+                },
+              ),
             ),
       bottomNavigationBar: Container(
           height: height * 0.05,
