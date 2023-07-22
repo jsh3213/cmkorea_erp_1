@@ -1,7 +1,7 @@
 import 'dart:convert';
+import 'dart:async';
 // ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
-import 'dart:async';
 // ignore: depend_on_referenced_packages
 import 'package:http/http.dart' as http;
 import '../../model/product.dart';
@@ -20,8 +20,7 @@ class ProductApi {
         final serialLower = product.serialNumber.toLowerCase();
         final modelLower = product.model.toLowerCase();
         final searchLower = query.toLowerCase();
-        return serialLower.contains(searchLower) ||
-            modelLower.contains(searchLower);
+        return serialLower.contains(searchLower) || modelLower.contains(searchLower);
       }).toList();
     } else {
       throw Exception();
@@ -64,10 +63,11 @@ class ProductApi {
     return statusCode;
   }
 
-  static void inImageCreate(int id, List path) async {
+  static Future<int> inImageCreate(int id, List path) async {
     var uri = Uri.parse("$baseUrl/api/product/$id/inimage/create/");
     var request = http.MultipartRequest("POST", uri);
     request.fields['parameter'] = '입고사진';
+
     // ignore: avoid_function_literals_in_foreach_calls
     path.forEach((element) async {
       request.files.add(await http.MultipartFile.fromPath(
@@ -75,24 +75,25 @@ class ProductApi {
         element,
       ));
     });
-    request.send().then((value) {
-      if (value.statusCode == 200) {}
-    });
+
+    var response = await request.send();
+    return response.statusCode;
   }
 
-  static void outImageCreate(int id, List path) async {
+  static Future<int> outImageCreate(int id, List path) async {
     var uri = Uri.parse("$baseUrl/api/product/$id/outimage/create/");
     var request = http.MultipartRequest("POST", uri);
-    // request.fields['parameter'] = '보내고 싶은 파라미터';
+    request.fields['parameter'] = '출고사진';
+
+    // ignore: avoid_function_literals_in_foreach_calls
     path.forEach((element) async {
       request.files.add(await http.MultipartFile.fromPath(
         'outImage',
         element,
       ));
     });
-    request.send().then((value) {
-      if (value.statusCode == 200) {}
-    });
+    var response = await request.send();
+    return response.statusCode;
   }
 
   static Future inImageDelete(int id) async {
@@ -105,10 +106,8 @@ class ProductApi {
     return 200;
   }
 
-  static Future<List<Product>> fetchByDateRange(
-      DateTime startDate, DateTime endDate) async {
-    final response = await http.get(Uri.parse(
-        '$baseUrl/api/product/check/list/?start_date=$startDate&end_date=$endDate'));
+  static Future<List<Product>> fetchByDateRange(DateTime startDate, DateTime endDate) async {
+    final response = await http.get(Uri.parse('$baseUrl/api/product/check/list/?start_date=$startDate&end_date=$endDate'));
     if (response.statusCode == 200) {
       final List products = json.decode(utf8.decode(response.bodyBytes));
       return products.map((json) => Product.fromJson(json)).toList();

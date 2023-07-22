@@ -10,11 +10,11 @@
 		</data>
 		<key>Resources/flutter_assets/AssetManifest.bin</key>
 		<data>
-		J3+heovLY3uzSyscGiYMUOc5sJc=
+		lyIz9ZE0o2A6etH/Ulg0tnzfYcc=
 		</data>
 		<key>Resources/flutter_assets/AssetManifest.json</key>
 		<data>
-		9mECvuB+zzjTxgdvhHwLRGlxCz8=
+		bQzYI5qwlG4SzVfXd7iQ1gd8hdg=
 		</data>
 		<key>Resources/flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Resources/flutter_assets/NOTICES.Z</key>
 		<data>
-		vlmy3tJKjJWk+CRA/HFoWTCqrCQ=
+		8QFvQQ6BNLyK7Y3R3x7Cka4OzGo=
 		</data>
 		<key>Resources/flutter_assets/assets/dingdong.mp3</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Resources/flutter_assets/isolate_snapshot_data</key>
 		<data>
-		8mJxvhxjR2Zo2fwLdYiVTzPWA0E=
+		v838gQ8J3jZ6qbliqEDYbLiFWwY=
 		</data>
 		<key>Resources/flutter_assets/kernel_blob.bin</key>
 		<data>
-		KQ5CRT7/SwxKJ/2GkwIWscoS6GM=
+		szf0XFfsgtd/guNc2zn+T1dyaHs=
 		</data>
 		<key>Resources/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -52,13 +52,21 @@
 		<data>
 		GzLA9+zvVZx4OJtIx9wgFLqdlcU=
 		</data>
+		<key>Resources/flutter_assets/packages/flutter_update_dialog/assets/update_bg_app_top.png</key>
+		<data>
+		gA2QTra1r5KA6iIcRDK4qfy6zog=
+		</data>
+		<key>Resources/flutter_assets/packages/flutter_update_dialog/assets/update_ic_close.png</key>
+		<data>
+		oY8vhP2MUgruhIRdHFtWosAt1Po=
+		</data>
 		<key>Resources/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
 		XHXaUJyiOGA8Fg8IUhEcTdXECcA=
 		</data>
 		<key>Resources/flutter_assets/vm_snapshot_data</key>
 		<data>
-		982t5EXovMcQwtIqgxUzvOrzJMc=
+		wVCDsOQlJhUyvrMuhaM3MeqUNWk=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -74,14 +82,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7UOESk/UkPCMHrJ2owUUm73NNRE08EiL7fyCycvDeyE=
+			yed/dTc7RsRhHI43I8nHhDDbrXtxyldlrBFG86u6Zwc=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7qmss3EcFVfjUdnwThAOpK+g/tEsw+OrBaqALp1Gp98=
+			qv+PP/opNjPH9dS23TFhtTL0mAuQi7/iNkyPrmnaGls=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/FontManifest.json</key>
@@ -95,7 +103,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pHPy2/mLvFAhpwgVjNxBJICy5swVEvWE3CdiaxSH4Uo=
+			7zLZDbJFlBh/VsEjPi6hvnjpjsMsBIEJZVcVT1pmktc=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/assets/dingdong.mp3</key>
@@ -116,14 +124,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CFhg401ZOxlIFYdTfAyFuPxR9nqwgKXqOqK40ekipXw=
+			Q3MKecK2WuV9poeiw1fLKIYR/n61LLk5ZpHhUj6YMJw=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cMAyAPjaSTKRIgepwrfw2xYnqulWwdNNbb0NdCnI3X4=
+			f8AZXwfqJPmr887vF9Jnl/BY1H10i4V1eNYCXuIrgB4=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -147,6 +155,20 @@
 			S4FsdLwKm1BXhGRGQAiKNW9DMtkLnA+Nk4KMhGJAfWE=
 			</data>
 		</dict>
+		<key>Resources/flutter_assets/packages/flutter_update_dialog/assets/update_bg_app_top.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KAiFlA8ozWgCxqHDdaEXJC4nuZAsoYDkAEWUsjafBJI=
+			</data>
+		</dict>
+		<key>Resources/flutter_assets/packages/flutter_update_dialog/assets/update_ic_close.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MUIwx8ABKB/KCS9LX8S5ZIewKoFE7HCavtTeTA18278=
+			</data>
+		</dict>
 		<key>Resources/flutter_assets/shaders/ink_sparkle.frag</key>
 		<dict>
 			<key>hash2</key>
@@ -158,7 +180,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			t1N41D0FcJomca9+8ZJT7nm+ObZlBs65YOyvedTWUJQ=
+			pKvVVo/CPIJFzUPS2fhLuWOuiKFXCBKbw9g8gmDjVXE=
 			</data>
 		</dict>
 	</dict>

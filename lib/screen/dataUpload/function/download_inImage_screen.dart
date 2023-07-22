@@ -22,8 +22,7 @@ class InImageDownloadScreen extends StatefulWidget {
 }
 
 class _InImageDownloadScreenState extends State<InImageDownloadScreen> {
-  late List<bool> _isSelected =
-      List.filled(widget.product.inImage.length, false);
+  late List<bool> _isSelected = List.filled(widget.product.inImage.length, false);
   bool wait = false;
 
   @override
@@ -73,10 +72,8 @@ class _InImageDownloadScreenState extends State<InImageDownloadScreen> {
     var directory = Directory(directoryPath);
     await directory.create(recursive: true);
     for (int i = 0; i < selecteImage.length; i++) {
-      var response = await http.get(Uri.parse(
-          '$baseUrl/api${widget.product.inImage[selecteImage[i]].image}'));
-      File file =
-          File("${directory.path}/${widget.product.serialNumber}_Image_$i.jpg");
+      var response = await http.get(Uri.parse('$baseUrl/api${widget.product.inImage[selecteImage[i]].image}'));
+      File file = File("${directory.path}/${widget.product.serialNumber}_Image_$i.jpg");
       await file.writeAsBytes(response.bodyBytes);
     }
     _isSelected = List.filled(widget.product.inImage.length, false);
@@ -107,8 +104,7 @@ class _InImageDownloadScreenState extends State<InImageDownloadScreen> {
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 6,
                       ),
                       itemCount: widget.product.inImage.length,
@@ -128,8 +124,7 @@ class _InImageDownloadScreenState extends State<InImageDownloadScreen> {
                                 width: width * 0.3,
                                 height: height * 0.2,
                                 child: InkWell(
-                                  onTap: () =>
-                                      _handleCheckboxChanged(true, index),
+                                  onTap: () => _handleCheckboxChanged(true, index),
                                   child: Image.network(
                                     '$baseUrl/api${widget.product.inImage[index].image}',
                                     fit: BoxFit.cover,
@@ -155,8 +150,7 @@ class _InImageDownloadScreenState extends State<InImageDownloadScreen> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _isSelected = List.filled(
-                                  widget.product.inImage.length, true);
+                              _isSelected = List.filled(widget.product.inImage.length, true);
                             });
                           },
                           child: const Text('전체 선택')),
@@ -168,8 +162,7 @@ class _InImageDownloadScreenState extends State<InImageDownloadScreen> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _isSelected = List.filled(
-                                  widget.product.inImage.length, false);
+                              _isSelected = List.filled(widget.product.inImage.length, false);
                             });
                           },
                           child: const Text('전체 취소')),

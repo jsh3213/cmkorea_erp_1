@@ -1,0 +1,10 @@
+version: "Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)"
+options: "22269343d4e2476f46b8f3e0cb67380a1501055d94178cb10630d8609e53147e"
+build_start_time: [1690033313, 531383037]
+build_end_time: [1690033320, 692018985]
+inputs:
+  "/Users/js/.pub-cache/hosted/pub.dev/audioplayers_darwin-2.0.0/macos/Classes/AudioContext.swift": [1689951974, 94577789]
+  "/Users/js/.pub-cache/hosted/pub.dev/audioplayers_darwin-2.0.0/macos/Classes/Logger.swift": [1689951974, 98076343]
+  "/Users/js/.pub-cache/hosted/pub.dev/audioplayers_darwin-2.0.0/macos/Classes/SwiftAudioplayersDarwinPlugin.swift": [1689951974, 97209453]
+  "/Users/js/.pub-cache/hosted/pub.dev/audioplayers_darwin-2.0.0/macos/Classes/Utils.swift": [1689951974, 93858718]
+  "/Users/js/.pub-cache/hosted/pub.dev/audioplayers_darwin-2.0.0/macos/Classes/WrappedMediaPlayer.swift": [1689951974, 96345424]

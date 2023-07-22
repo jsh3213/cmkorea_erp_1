@@ -32,10 +32,9 @@ class IndexScreenState extends State<IndexScreen> {
           body: SafeArea(
             child: Column(
               children: [
-                const SizedBox(height: 70),
+                const SizedBox(height: 10),
                 TabBar(
-                  labelStyle: const TextStyle(
-                      fontSize: 22.0, fontWeight: FontWeight.bold),
+                  labelStyle: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
                   unselectedLabelStyle: const TextStyle(fontSize: 15.0),
                   indicatorColor: Colors.black,
                   labelColor: Colors.black,

@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>5A3C1810-2E69-4CBC-89B9-9F3A2AC84763</key>
+		<key>252AF425-DD7F-4643-9BFB-A85BD51B39D9</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>5A3C1810-2E69-4CBC-89B9-9F3A2AC84763.xcactivitylog</string>
+			<string>252AF425-DD7F-4643-9BFB-A85BD51B39D9.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -30,49 +30,15 @@
 			<key>schemeIdentifier-sharedScheme</key>
 			<integer>1</integer>
 			<key>signature</key>
-			<string>Building workspace Runner with scheme Runner and configuration Debug</string>
+			<string>Building workspace Runner with scheme Runner and configuration Release</string>
 			<key>timeStartedRecording</key>
-			<real>711614028.76816702</real>
+			<real>711732874.70309103</real>
 			<key>timeStoppedRecording</key>
-			<real>711614036.78815997</real>
+			<real>711732920.65278304</real>
 			<key>title</key>
-			<string>Building workspace Runner with scheme Runner and configuration Debug</string>
+			<string>Building workspace Runner with scheme Runner and configuration Release</string>
 			<key>uniqueIdentifier</key>
-			<string>5A3C1810-2E69-4CBC-89B9-9F3A2AC84763</string>
-		</dict>
-		<key>A7207CD3-E002-48A8-BE59-9D374FB57DA5</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>A7207CD3-E002-48A8-BE59-9D374FB57DA5.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>Runner project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Runner</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building workspace Runner with scheme Runner and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>711630187.29999006</real>
-			<key>timeStoppedRecording</key>
-			<real>711630194.26562595</real>
-			<key>title</key>
-			<string>Building workspace Runner with scheme Runner and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>A7207CD3-E002-48A8-BE59-9D374FB57DA5</string>
+			<string>252AF425-DD7F-4643-9BFB-A85BD51B39D9</string>
 		</dict>
 	</dict>
 </dict>

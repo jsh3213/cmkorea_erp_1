@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/js/.pub-cache/hosted/pub.dev/audioplayers_darwin-2.0.0/macos/Classes/AudioplayersDarwinPlugin.m \
+  /Users/js/Documents/flutter/build/macos/Build/Intermediates.noindex/Pods.build/Release/audioplayers_darwin.build/module.modulemap \
+  /Users/js/Documents/flutter/macos/Pods/Target\ Support\ Files/audioplayers_darwin/audioplayers_darwin-prefix.pch \
+  /Users/js/.pub-cache/hosted/pub.dev/audioplayers_darwin-2.0.0/macos/Classes/AudioplayersDarwinPlugin.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Modules/module.modulemap \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterViewController.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterTexture.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterPluginMacOS.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterPlatformViews.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterPluginRegistrarMacOS.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterEngine.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterDartProject.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterCodecs.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterChannels.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterBinaryMessenger.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterMacros.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterAppDelegate.h \
+  /Users/js/flutter/bin/cache/artifacts/engine/darwin-x64-release/FlutterMacOS.framework/Headers/FlutterMacOS.h \
+  /Users/js/Documents/flutter/build/macos/Build/Products/Release/audioplayers_darwin/audioplayers_darwin.framework/Headers/audioplayers_darwin-Swift.h

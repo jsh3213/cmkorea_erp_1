@@ -2,17 +2,15 @@ import 'dart:io';
 import 'package:cmkorea_erp/api/product_api.dart';
 import 'package:cmkorea_erp/model/product.dart';
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
-import 'dart:async';
-// ignore: depend_on_referenced_packages
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-// ignore: must_be_immutable
 class ImageUploadScreen extends StatefulWidget {
-  Product product;
-  String status;
-  ImageUploadScreen({
+  final Product product;
+  final String status;
+
+  const ImageUploadScreen({
     Key? key,
     required this.product,
     required this.status,
@@ -25,17 +23,37 @@ class ImageUploadScreen extends StatefulWidget {
 class ImageUploadScreenState extends State<ImageUploadScreen> {
   TextEditingController controllerText = TextEditingController();
   List? _images = [];
+  var response;
 
   void _openFilePicker() async {
     try {
-      FilePickerResult? files = await FilePicker.platform
-          .pickFiles(allowMultiple: true, type: FileType.image);
+      FilePickerResult? files = await FilePicker.platform.pickFiles(allowMultiple: true, type: FileType.image);
       var file = files!.paths..toList().toString();
       setState(() {
         _images = file;
       });
-      // ignore: empty_catches
     } catch (e) {}
+  }
+
+  void _showProgressDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        // Flutter Spinkit 패키지의 프로그래스 바 등록
+        var spinkit = SpinKitCircle(
+          color: Colors.blueAccent,
+          size: 50.0,
+        );
+
+        return AlertDialog(
+          content: SizedBox(
+            height: 50,
+            child: Center(child: spinkit),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -52,22 +70,26 @@ class ImageUploadScreenState extends State<ImageUploadScreen> {
         actions: [
           TextButton(
             onPressed: () async {
+              _showProgressDialog(); // Show progress dialog
               await sendApi();
-              Get.back();
-              _images!.isEmpty
-                  ? null
-                  : Get.showSnackbar(
-                      GetSnackBar(
-                        title: widget.product.serialNumber,
-                        message: '저장 완료',
-                        duration: const Duration(seconds: 2),
-                        snackPosition: SnackPosition.TOP,
-                      ),
-                    );
+              if (response == 201) {
+                Get.back(); // 프로그레스 다이얼로그를 닫음
+                Get.back(result: true);
+                _images!.isEmpty
+                    ? null
+                    : Get.showSnackbar(
+                        GetSnackBar(
+                          title: widget.product.serialNumber,
+                          message: '저장 완료',
+                          duration: const Duration(seconds: 2),
+                          snackPosition: SnackPosition.TOP,
+                        ),
+                      );
+              }
             },
             child: const Text(
               '저장',
-              style: TextStyle(color: (Colors.white), fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: 18),
             ),
           ),
           const SizedBox(
@@ -80,10 +102,7 @@ class ImageUploadScreenState extends State<ImageUploadScreen> {
           : Padding(
               padding: const EdgeInsets.all(20.0),
               child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 5,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 10),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5, crossAxisSpacing: 20, mainAxisSpacing: 10),
                 itemCount: _images!.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
@@ -126,11 +145,17 @@ class ImageUploadScreenState extends State<ImageUploadScreen> {
     );
   }
 
-  sendApi() {
+  sendApi() async {
     if (widget.status == 'inImage') {
-      ProductApi.inImageCreate(widget.product.id, _images!);
+      var value = await ProductApi.inImageCreate(widget.product.id, _images!);
+      setState(() {
+        response = value;
+      });
     } else {
-      ProductApi.outImageCreate(widget.product.id, _images!);
+      var value = await ProductApi.outImageCreate(widget.product.id, _images!);
+      setState(() {
+        response = value;
+      });
     }
   }
 }

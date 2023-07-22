@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   intl: ^0.18.0
   file_picker: ^5.2.5
+  url_launcher: ^6.1.12
 
 dev_dependencies:
   flutter_test:
@@ -58,8 +59,9 @@ dev_dependencies:
   syncfusion_flutter_datepicker: ^20.4.43
   photo_view: ^0.14.0
   path_provider: ^2.0.12
-  # msix: ^3.7.0
-
+  flutter_spinkit: ^5.1.0
+  flutter_update_dialog: ^2.0.0
+  url_launcher: ^6.0.22
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

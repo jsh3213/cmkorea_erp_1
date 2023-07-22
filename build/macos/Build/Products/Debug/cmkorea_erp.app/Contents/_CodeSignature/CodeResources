@@ -6,11 +6,11 @@
 	<dict>
 		<key>Resources/AppIcon.icns</key>
 		<data>
-		WnTSI1AjkhL8cU9oCOZXreSXty0=
+		mscAbsqnmLQQ6rrckU0VC6gymRc=
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		8E8jTuZg5x/I4OkKyFIOldHqqaQ=
+		sP7DtVk0n+1s5OsODRxdae9N2w4=
 		</data>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<data>
@@ -23,28 +23,28 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			W+dCPDT7Mw3u3kQu0njbfcV5A94=
+			l7BYK++WvJ9tU8o8MrRYPxpYk9Q=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"5be7423c34fb330deede442ed278db7dc57903de"</string>
+			<string>cdhash H"97b0582bef96bc9f6d53ca3c32b4583f1a5893d4"</string>
 		</dict>
 		<key>Frameworks/FlutterMacOS.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			IR6sUg7fj8b2v6Xc9fDtCjt0Iyk=
+			qW1TSE2uqHRMwifb+toddG1/tI4=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"211eac520edf8fc6f6bfa5dcf5f0ed0a3b742329"</string>
+			<string>cdhash H"a96d53484daea8744cc227dbfada1d746d7fb48e"</string>
 		</dict>
 		<key>Frameworks/audioplayers_darwin.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			G7YzJEpvtRi/ODLYwNcrOyWxZgI=
+			NSzG/SyJsJel/jhiXekeLyPHqSY=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"1bb633244a6fb518bf3832d8c0d72b3b25b16602"</string>
+			<string>cdhash H"352cc6fd2c89b097a5fe38625de91e2f23c7a926"</string>
 		</dict>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<dict>
@@ -221,23 +221,23 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			QOEbLDu2KMUBQ8zfqcDOskzhosg=
+			3zTD+DJ/+F37xwQQpDyt6E6FK4A=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"40e11b2c3bb628c50143ccdfa9c0ceb24ce1a2c8"</string>
+			<string>cdhash H"df34c3f8327ff85dfbc70410a43cade84e852b80"</string>
 		</dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b5gagWkFHSnyQN0GT0uLVENHCxZI7iSD4A0Md7jugJU=
+			85tRUp8zAiCRA8M1Grzk4jS3zeXOF+q+C0YxRvdZLGo=
 			</data>
 		</dict>
 		<key>Resources/Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SBXD6+ikozQCMrqXsZEl61tF3mxUvzEDtIdOl7mYa68=
+			2IPxguiSjl3Wm9pYfvWbY9tIvBtZcj5yfX3oKpQ3iFs=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
