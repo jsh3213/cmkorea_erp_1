@@ -11,7 +11,8 @@ import 'screen/repairDecide/repairTypeDecide_screen.dart';
 final controller = Get.put(ReactiveController());
 final baseUrl = controller.baseUrl;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -24,24 +25,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
-
-  // 서버로부터 업데이트 정보 가져오기 함수
-  Future<bool> checkUpdateAvailability() async {
-    // final response = await http.get(Uri.parse('$baseUrl/api/updates'));
-    final response = await http
-        .get(Uri.parse('$baseUrl/api/updates'))
-        .catchError((error) => print(error));
-
-    if (response.statusCode == 200) {
-      Map<String, dynamic> updateData = json.decode(response.body);
-
-      //   // 다운로드 가능한 새로운 버전이 있는지 확인
-      if (updateData['isUpdateAvailable'] == true) {
-        return true;
-      }
-    }
-    return false;
-  }
 
   Future<void> showUpdateDialog(BuildContext context) async {
     return showDialog<void>(
@@ -61,9 +44,7 @@ class _MyAppState extends State<MyApp> {
             TextButton(
               child: const Text('업데이트'),
               onPressed: () {
-                // ignore: deprecated_member_use
-                launch(
-                    "$baseUrl/api/download/file.xyz"); // 사용자가 업데이트를 다운로드하고 설치할 수 있는 웹 페이지로 이동
+                launch("$baseUrl/download-url/App-Name.msix");
                 Navigator.of(context).pop();
               },
             ),
@@ -73,13 +54,18 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Future<bool> _checkUpdate(BuildContext context) async {
-    final isUpdateAvailable = await checkUpdateAvailability();
+  Future<void> checkAndUpdate(BuildContext context) async {
+    final response = await http
+        .get(Uri.parse('$baseUrl/api/updates'))
+        .catchError((error) => print(error));
 
-    if (isUpdateAvailable) {
-      await showUpdateDialog(context);
+    if (response.statusCode == 200) {
+      Map<String, dynamic> updateData = json.decode(response.body);
+
+      if (updateData['isUpdateAvailable'] == true) {
+        await showUpdateDialog(context);
+      }
     }
-    return false;
   }
 
   @override
@@ -91,7 +77,7 @@ class _MyAppState extends State<MyApp> {
       home: Builder(
         builder: (BuildContext ctx) {
           WidgetsBinding.instance?.addPostFrameCallback((_) {
-            _checkUpdate(_navigatorKey.currentContext!);
+            checkAndUpdate(_navigatorKey.currentContext!);
           });
           return const MyHomePage();
         },
