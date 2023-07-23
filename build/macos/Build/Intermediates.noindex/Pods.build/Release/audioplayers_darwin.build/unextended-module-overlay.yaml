@@ -4,11 +4,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': "/Users/js/Documents/flutter/build/macos/Build/Products/Release/audioplayers_darwin/audioplayers_darwin.framework/Modules"
+    'name': "/Users/cm/cmkorea_erp/build/macos/Build/Products/Release/audioplayers_darwin/audioplayers_darwin.framework/Modules"
     'contents': [{
       'type': 'file',
       'name': "module.modulemap",
-      'external-contents': "/Users/js/Documents/flutter/build/macos/Build/Intermediates.noindex/Pods.build/Release/audioplayers_darwin.build/unextended-module.modulemap",
+      'external-contents': "/Users/cm/cmkorea_erp/build/macos/Build/Intermediates.noindex/Pods.build/Release/audioplayers_darwin.build/unextended-module.modulemap",
     }]
   }]
 }

@@ -117,9 +117,11 @@ class FilterNetworkListPageState extends State<ListWaitScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              product.serialNumber.toString(),
-              style: const TextStyle(color: Colors.green),
+            Flexible(
+              child: Text(
+                product.serialNumber.toString(),
+                style: const TextStyle(color: Colors.green),
+              ),
             ),
             Text(
               product.repairTypeDecide.toString(),

@@ -4,11 +4,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': "/Users/js/Documents/flutter/build/macos/Build/Products/Release/path_provider_foundation/path_provider_foundation.framework/Modules"
+    'name': "/Users/cm/cmkorea_erp/build/macos/Build/Products/Release/path_provider_foundation/path_provider_foundation.framework/Modules"
     'contents': [{
       'type': 'file',
       'name': "module.modulemap",
-      'external-contents': "/Users/js/Documents/flutter/build/macos/Build/Intermediates.noindex/Pods.build/Release/path_provider_foundation.build/unextended-module.modulemap",
+      'external-contents': "/Users/cm/cmkorea_erp/build/macos/Build/Intermediates.noindex/Pods.build/Release/path_provider_foundation.build/unextended-module.modulemap",
     }]
   }]
 }

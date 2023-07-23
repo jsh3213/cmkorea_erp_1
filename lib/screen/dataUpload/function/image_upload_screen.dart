@@ -27,7 +27,8 @@ class ImageUploadScreenState extends State<ImageUploadScreen> {
 
   void _openFilePicker() async {
     try {
-      FilePickerResult? files = await FilePicker.platform.pickFiles(allowMultiple: true, type: FileType.image);
+      FilePickerResult? files = await FilePicker.platform
+          .pickFiles(allowMultiple: true, type: FileType.image);
       var file = files!.paths..toList().toString();
       setState(() {
         _images = file;
@@ -102,7 +103,10 @@ class ImageUploadScreenState extends State<ImageUploadScreen> {
           : Padding(
               padding: const EdgeInsets.all(20.0),
               child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5, crossAxisSpacing: 20, mainAxisSpacing: 10),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 5,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 10),
                 itemCount: _images!.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Column(

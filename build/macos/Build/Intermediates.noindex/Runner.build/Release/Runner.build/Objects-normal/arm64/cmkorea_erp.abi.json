@@ -1,74 +1,9 @@
 {
-  "kind": "Root",
-  "name": "TopLevel",
-  "printedName": "TopLevel",
-  "children": [
-    {
-      "kind": "Import",
-      "name": "Cocoa",
-      "printedName": "Cocoa",
-      "declKind": "Import",
-      "moduleName": "cmkorea_erp"
-    },
-    {
-      "kind": "Import",
-      "name": "FlutterMacOS",
-      "printedName": "FlutterMacOS",
-      "declKind": "Import",
-      "moduleName": "cmkorea_erp"
-    },
-    {
-      "kind": "Import",
-      "name": "Cocoa",
-      "printedName": "Cocoa",
-      "declKind": "Import",
-      "moduleName": "cmkorea_erp"
-    },
-    {
-      "kind": "Import",
-      "name": "FlutterMacOS",
-      "printedName": "FlutterMacOS",
-      "declKind": "Import",
-      "moduleName": "cmkorea_erp"
-    },
-    {
-      "kind": "Import",
-      "name": "FlutterMacOS",
-      "printedName": "FlutterMacOS",
-      "declKind": "Import",
-      "moduleName": "cmkorea_erp",
-      "declAttributes": [
-        "RawDocComment"
-      ]
-    },
-    {
-      "kind": "Import",
-      "name": "Foundation",
-      "printedName": "Foundation",
-      "declKind": "Import",
-      "moduleName": "cmkorea_erp"
-    },
-    {
-      "kind": "Import",
-      "name": "audioplayers_darwin",
-      "printedName": "audioplayers_darwin",
-      "declKind": "Import",
-      "moduleName": "cmkorea_erp"
-    },
-    {
-      "kind": "Import",
-      "name": "path_provider_foundation",
-      "printedName": "path_provider_foundation",
-      "declKind": "Import",
-      "moduleName": "cmkorea_erp"
-    },
-    {
-      "kind": "Import",
-      "name": "url_launcher_macos",
-      "printedName": "url_launcher_macos",
-      "declKind": "Import",
-      "moduleName": "cmkorea_erp"
-    }
-  ],
-  "json_format_version": 6
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "json_format_version": 8
+  },
+  "ConstValues": []
 }

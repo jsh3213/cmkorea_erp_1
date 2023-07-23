@@ -28,10 +28,9 @@ class _MyAppState extends State<MyApp> {
   // 서버로부터 업데이트 정보 가져오기 함수
   Future<bool> checkUpdateAvailability() async {
     // final response = await http.get(Uri.parse('$baseUrl/api/updates'));
-    final response = await http.get(Uri.parse('$baseUrl/api/updates')).catchError((error) => print(error));
-
-    print(response);
-    print(response.statusCode);
+    final response = await http
+        .get(Uri.parse('$baseUrl/api/updates'))
+        .catchError((error) => print(error));
 
     if (response.statusCode == 200) {
       Map<String, dynamic> updateData = json.decode(response.body);
@@ -63,7 +62,8 @@ class _MyAppState extends State<MyApp> {
               child: const Text('업데이트'),
               onPressed: () {
                 // ignore: deprecated_member_use
-                launch("$baseUrl/download"); // 사용자가 업데이트를 다운로드하고 설치할 수 있는 웹 페이지로 이동
+                launch(
+                    "$baseUrl/api/download/file.xyz"); // 사용자가 업데이트를 다운로드하고 설치할 수 있는 웹 페이지로 이동
                 Navigator.of(context).pop();
               },
             ),
@@ -120,7 +120,8 @@ class _MyHomePageState extends State<MyHomePage> {
           centerTitle: false,
           toolbarHeight: 10.0,
           bottom: TabBar(
-            labelStyle: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            labelStyle:
+                const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             unselectedLabelStyle: const TextStyle(fontSize: 15.0),
             tabs: _tabs.map((String title) => Tab(text: title)).toList(),
           ),

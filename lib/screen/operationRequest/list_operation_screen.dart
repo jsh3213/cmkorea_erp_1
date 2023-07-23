@@ -148,7 +148,7 @@ class OperationRequestListScreenState
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(operation.note),
+                Flexible(child: Text(operation.note)),
                 Text(operation.state),
               ],
             ),

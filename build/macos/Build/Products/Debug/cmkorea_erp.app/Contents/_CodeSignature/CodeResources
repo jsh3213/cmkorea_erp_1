@@ -6,11 +6,11 @@
 	<dict>
 		<key>Resources/AppIcon.icns</key>
 		<data>
-		mscAbsqnmLQQ6rrckU0VC6gymRc=
+		WnTSI1AjkhL8cU9oCOZXreSXty0=
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		sP7DtVk0n+1s5OsODRxdae9N2w4=
+		8E8jTuZg5x/I4OkKyFIOldHqqaQ=
 		</data>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<data>
@@ -23,28 +23,28 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			l7BYK++WvJ9tU8o8MrRYPxpYk9Q=
+			ag9zH/BNRq/ex7RMUqWPThDX3fw=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"97b0582bef96bc9f6d53ca3c32b4583f1a5893d4"</string>
+			<string>cdhash H"6a0f731ff04d46afdec7b44c52a58f4e10d7ddfc"</string>
 		</dict>
 		<key>Frameworks/FlutterMacOS.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			qW1TSE2uqHRMwifb+toddG1/tI4=
+			XUvGFXv4NzUwusQeWidnaxI6Bs8=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"a96d53484daea8744cc227dbfada1d746d7fb48e"</string>
+			<string>cdhash H"5d4bc6157bf8373530bac41e5a27676b123a06cf"</string>
 		</dict>
 		<key>Frameworks/audioplayers_darwin.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			NSzG/SyJsJel/jhiXekeLyPHqSY=
+			KC5fCFJPM+cs6ic3hbEhMjcsVB8=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"352cc6fd2c89b097a5fe38625de91e2f23c7a926"</string>
+			<string>cdhash H"282e5f08524f33e72cea273785b12132372c541f"</string>
 		</dict>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<dict>
@@ -221,23 +221,32 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			3zTD+DJ/+F37xwQQpDyt6E6FK4A=
+			K7QxYRVjH+FUKwlKRUfs4LviwDg=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"df34c3f8327ff85dfbc70410a43cade84e852b80"</string>
+			<string>cdhash H"2bb4316115631fe1542b094a4547ece0bbe2c038"</string>
+		</dict>
+		<key>Frameworks/url_launcher_macos.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			KOkOzbc6j5BBPFSRBt6RjzMzPzA=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"28e90ecdb73a8f90413c549106de918f33333f30"</string>
 		</dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			85tRUp8zAiCRA8M1Grzk4jS3zeXOF+q+C0YxRvdZLGo=
+			b5gagWkFHSnyQN0GT0uLVENHCxZI7iSD4A0Md7jugJU=
 			</data>
 		</dict>
 		<key>Resources/Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2IPxguiSjl3Wm9pYfvWbY9tIvBtZcj5yfX3oKpQ3iFs=
+			SBXD6+ikozQCMrqXsZEl61tF3mxUvzEDtIdOl7mYa68=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/MainMenu.nib</key>

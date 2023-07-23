@@ -13,10 +13,12 @@ class OperationCompleteListScreen extends StatefulWidget {
   OperationCompleteListScreen({super.key, required this.place});
 
   @override
-  OperationCompleteListScreenState createState() => OperationCompleteListScreenState();
+  OperationCompleteListScreenState createState() =>
+      OperationCompleteListScreenState();
 }
 
-class OperationCompleteListScreenState extends State<OperationCompleteListScreen> {
+class OperationCompleteListScreenState
+    extends State<OperationCompleteListScreen> {
   TextEditingController controller = TextEditingController();
 
   static List<Operation> _operation = [];
@@ -49,7 +51,9 @@ class OperationCompleteListScreenState extends State<OperationCompleteListScreen
   Future init() async {
     setState(() => status = true);
     var response = await OperationApi.operationListSearch(query);
-    setState(() => _operation = response.where((_) => _.place == widget.place && _.state == '완료').toList());
+    setState(() => _operation = response
+        .where((_) => _.place == widget.place && _.state == '완료')
+        .toList());
     setState(() => status = false);
     const Duration(milliseconds: 200);
   }
@@ -107,7 +111,10 @@ class OperationCompleteListScreenState extends State<OperationCompleteListScreen
         if (!mounted) return;
         setState(() {
           this.query = query;
-          _operation = response.where((element) => element.place == widget.place && element.state == '완료').toList();
+          _operation = response
+              .where((element) =>
+                  element.place == widget.place && element.state == '완료')
+              .toList();
         });
       });
 
@@ -133,7 +140,8 @@ class OperationCompleteListScreenState extends State<OperationCompleteListScreen
               ),
             ),
             onTap: () {
-              Get.to(() => UpdateOperationScreen(operation: operation))?.then((value) {
+              Get.to(() => UpdateOperationScreen(operation: operation))
+                  ?.then((value) {
                 setState(() {
                   init();
                 });
