@@ -1,8 +1,0 @@
-version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
-options: "7bde10b301fe9bab5c2084d1a8dd66bdd11bac7487867579ba7cf6f1571da5b2"
-build_start_time: [1690110358, 771877050]
-build_end_time: [1690110365, 301689147]
-inputs:
-  "/Users/cm/cmkorea_erp/macos/Flutter/GeneratedPluginRegistrant.swift": [1690110309, 424456357]
-  "/Users/cm/cmkorea_erp/macos/Runner/AppDelegate.swift": [1674806706, 698929786]
-  "/Users/cm/cmkorea_erp/macos/Runner/MainFlutterWindow.swift": [1674806706, 700607299]

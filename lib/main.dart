@@ -1,88 +1,101 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
-import 'controller/getxController.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:path_provider/path_provider.dart';
 import 'screen/dataUpload/main_list_screen.dart';
 import 'screen/operationRequest/operation_main_screen.dart';
 import 'screen/repairDecide/repairTypeDecide_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:get/get.dart';
+import '../controller/getxController.dart';
+
+
 
 final controller = Get.put(ReactiveController());
 final baseUrl = controller.baseUrl;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  final String localVersion = packageInfo.version;
+
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
+      home: MyApp(localVersion: localVersion),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key, required this.localVersion}) : super(key: key);
+
+  final String localVersion;
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
+  // final String baseUrl = 'http://your-server-domain.com or IP 서버주소 여기에 입력하셔야합니다.';
+  late String downloadUrl;
 
-  Future<void> showUpdateDialog(BuildContext context) async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('새로운 업데이트가 있습니다.'),
-          content: const Text('새로운 버전을 설치하려면 업데이트 버튼을 눌러주세요.'),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('취소'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              child: const Text('업데이트'),
-              onPressed: () {
-                launch("$baseUrl/download-url/App-Name.msix");
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
+  @override
+  void initState() {
+    super.initState();
+    downloadUrl = baseUrl + '/download/cmkorea_erp_' + widget.localVersion + '.msix';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Builder(
+      builder: (BuildContext ctx) {
+        WidgetsBinding.instance?.addPostFrameCallback((_) {
+          checkAndUpdate(context);
+        });
+        return MyHomePage();
       },
     );
   }
 
   Future<void> checkAndUpdate(BuildContext context) async {
-    final response = await http
-        .get(Uri.parse('$baseUrl/api/updates'))
-        .catchError((error) => print(error));
+    String serverVersion = '1.0.1'; // 서버의 버전을 직접 입력하세요.
 
-    if (response.statusCode == 200) {
-      Map<String, dynamic> updateData = json.decode(response.body);
+    if (widget.localVersion != serverVersion) {
+      Directory appDocDir = await getApplicationDocumentsDirectory();
+      String appDocPath = appDocDir.path;
+      String filePath = '$appDocPath/cmkorea_erp_$serverVersion.msix';
 
-      if (updateData['isUpdateAvailable'] == true) {
-        await showUpdateDialog(context);
+      if (File(filePath).existsSync()) {
+        // 삭제하려면 emit을 사용하세요.
+        File(filePath).deleteSync();
+        updateApp(filePath);
+      } else {
+        downloadAndInstallApp(serverVersion);
       }
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      navigatorKey: _navigatorKey,
-      home: Builder(
-        builder: (BuildContext ctx) {
-          WidgetsBinding.instance?.addPostFrameCallback((_) {
-            checkAndUpdate(_navigatorKey.currentContext!);
-          });
-          return const MyHomePage();
-        },
-      ),
-    );
+  void updateApp(String filePath) async {
+    if (await canLaunch(filePath)) {
+      await launch(filePath);
+    } else {
+      print('Cannot launch $filePath');
+    }
+  }
+
+  Future<void> downloadAndInstallApp(String serverVersion) async {
+    http.Response response = await http.get(Uri.parse(downloadUrl));
+    Directory appDocDir = await getApplicationDocumentsDirectory();
+    String appDocPath = appDocDir.path;
+    File file = File('$appDocPath/cmkorea_erp_$serverVersion.msix');
+    await file.writeAsBytes(response.bodyBytes);
+    updateApp(file.path);
   }
 }
 
