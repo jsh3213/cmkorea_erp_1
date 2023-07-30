@@ -50,7 +50,7 @@ class _SettingScreenState extends State<SettingScreen> {
               children: [
                 TextButton(
                     onPressed: () {
-                      Get.offAll(const MyHomePage());
+                      Get.offAll(MyHomePage());
                     },
                     child: Container(
                         padding: const EdgeInsets.all(10),

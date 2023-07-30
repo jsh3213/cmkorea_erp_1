@@ -1,0 +1,10 @@
+framework module auto_updater {
+  umbrella header "auto_updater-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module auto_updater.__Swift {
+  exclude header "auto_updater-Swift.h"
+}

@@ -1,109 +1,94 @@
-import 'dart:convert';
-import 'dart:io';
+import 'package:cmkorea_erp/controller/getxController.dart';
+import 'package:cmkorea_erp/downloadpage.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:package_info/package_info.dart';
-import 'package:path_provider/path_provider.dart';
+import 'dart:convert';
 import 'package:url_launcher/url_launcher.dart';
-import 'controller/getxController.dart';
-import 'screen/dataUpload/main_list_screen.dart';
-import 'screen/operationRequest/operation_main_screen.dart';
-import 'screen/repairDecide/repairTypeDecide_screen.dart';
+import 'package:get/get.dart';
 
 final controller = Get.put(ReactiveController());
 final baseUrl = controller.baseUrl;
 
-Future<Directory?> getSupportedPath() async {
-  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    return getApplicationDocumentsDirectory();
-  } else {
-    return getExternalStorageDirectory();
-  }
+void main() {
+  runApp(MyApp());
 }
 
-Future<void> checkForUpdates() async {
-  final packageInfo = await PackageInfo.fromPlatform();
-  final currentVersion = packageInfo.version;
-
-  final response = await http.get(Uri.parse('$baseUrl/api/appinfo/'));
-  final jsonResponse = json.decode(response.body);
-  final serverVersion = jsonResponse['version'];
-  final apkUrl = jsonResponse['url'];
-
-  if (serverVersion != currentVersion) {
-    final externalDir = await getSupportedPath();
-    final apkFile = File('${externalDir!.path}/app-release.apk');
-    final apkResponse = await http.get(Uri.parse(apkUrl));
-    await apkFile.writeAsBytes(apkResponse.bodyBytes);
-
-    if (await canLaunchUrl(Uri.parse(apkFile.path))) {
-      await launch(apkFile.path);
-    } else {
-      print('Could not launch apk file.');
-    }
-  }
-}
-
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await checkForUpdates();
-  runApp(const MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData.light(),
-        navigatorKey: _navigatorKey,
-        home: const MyHomePage());
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(),
+    );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<String> _tabs = ['수리 타입 결정', '작업 요청 리스트', '사진 및 자료'];
+  @override
+  void initState() {
+    super.initState();
+    checkForUpdates();
+  }
+
+  Future<void> checkForUpdates() async {
+    try {
+      final response = await http.get(
+          Uri.parse('#baseUrl/yourapp/version.json'),
+          headers: {'Accept': 'application/json'});
+
+      if (response.statusCode == 200) {
+        final jsonResponse = json.decode(response.body);
+        final latestVersion = jsonResponse["latest_version"];
+        final currentVersion = "1.0.0";
+
+        if (latestVersion != currentVersion) {
+          final updateUrl = jsonResponse["url"];
+          if (await canLaunch(updateUrl)) {
+            await launch(updateUrl);
+          } else {
+            throw 'Could not launch $updateUrl';
+          }
+        } else {
+          print("No updates available.");
+        }
+      } else {
+        throw Exception('Failed to fetch update information.');
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: _tabs.length,
-        child: Scaffold(
-          appBar: AppBar(
-            title: null,
-            centerTitle: false,
-            toolbarHeight: 10.0,
-            bottom: TabBar(
-              labelStyle:
-                  const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-              unselectedLabelStyle: const TextStyle(fontSize: 15.0),
-              tabs: _tabs.map((String title) => Tab(text: title)).toList(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter Demo Home Page'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
             ),
-          ),
-          body: const TabBarView(
-            children: [
-              RepairTypeDecideScreen(),
-              OperationMainScreen(),
-              UploadMainScreen(),
-            ],
-          ),
-        ));
+            TextButton(
+                onPressed: () {
+                  Get.to(DownloadPage());
+                },
+                child: Text('download'))
+          ],
+        ),
+      ),
+    );
   }
 }

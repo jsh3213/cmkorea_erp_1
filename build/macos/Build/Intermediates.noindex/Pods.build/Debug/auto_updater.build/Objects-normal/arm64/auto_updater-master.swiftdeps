@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "f5c1e85589dc6e02be0f1089a4396fa2eaf36ced0e85d4efa355dd2bbe2cff5b"
+build_start_time: [1690637589, 581739902]
+build_end_time: [1690637595, 215763092]
+inputs:
+  "/Users/cm/.pub-cache/hosted/pub.dev/auto_updater-0.1.7/macos/Classes/AutoUpdater.swift": [1690119480, 144158840]
+  "/Users/cm/.pub-cache/hosted/pub.dev/auto_updater-0.1.7/macos/Classes/AutoUpdaterPlugin.swift": [1690119480, 144325256]

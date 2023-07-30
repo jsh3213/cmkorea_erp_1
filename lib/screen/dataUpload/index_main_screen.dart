@@ -20,6 +20,7 @@ class IndexScreen extends StatefulWidget {
 class IndexScreenState extends State<IndexScreen> {
   final List _tabList = ['정보', '입고사진', '출고사진'];
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +30,7 @@ class IndexScreenState extends State<IndexScreen> {
       body: DefaultTabController(
         length: _tabList.length,
         child: Scaffold(
+          
           body: SafeArea(
             child: Column(
               children: [

@@ -58,7 +58,6 @@ dev_dependencies:
   table_calendar: ^3.0.9
   syncfusion_flutter_datepicker: ^20.4.43
   photo_view: ^0.14.0
-  path_provider: ^2.0.12
   flutter_spinkit: ^5.1.0
   flutter_update_dialog: ^2.0.0
   squirrel: ^0.2.0
@@ -66,7 +65,15 @@ dev_dependencies:
   msix: ^3.16.0
   package_info: ^2.0.2
   package_info_plus: ^4.0.2
-  url_launcher: ^6.1.12
+  open_file: ^3.3.2
+  permission_handler: ^10.4.3
+  install_plugin: ^2.1.0
+  flutter_install_apk_silently: ^0.2.0
+  path_provider: ^2.0.15
+  dio: ^4.0.0
+  file_selector: ^1.0.0
+
+  
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -110,7 +117,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
 
 msix_config:
   display_name: 'cmkorea_erp'

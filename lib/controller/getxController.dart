@@ -9,3 +9,4 @@ class ReactiveController extends GetxController {
   RxBool settingAlarm = true.obs;
 
   get color => settingColor;
+}

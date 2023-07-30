@@ -164,7 +164,7 @@ class _UpDateScreenState extends State<UpdateScreen> {
       controllerNote.text,
     );
     if (status == 200) {
-      Get.off(const MyHomePage());
+      Get.off(MyHomePage());
       Get.snackbar('성공', '저장 완료 ', snackPosition: SnackPosition.BOTTOM);
     }
     setState(() => wait = false);
