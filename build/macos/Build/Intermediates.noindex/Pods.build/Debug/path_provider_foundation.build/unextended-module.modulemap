@@ -6,5 +6,5 @@ framework module path_provider_foundation {
 }
 
 module path_provider_foundation.__Swift {
-  exclude header "path_provider_foundation-Swift.h"
+    exclude header "path_provider_foundation-Swift.h"
 }

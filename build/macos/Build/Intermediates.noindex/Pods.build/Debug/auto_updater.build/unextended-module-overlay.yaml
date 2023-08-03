@@ -4,11 +4,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': "/Users/cm/cmkorea_erp/build/macos/Build/Products/Debug/auto_updater/auto_updater.framework/Modules"
+    'name': "/Users/js/Documents/cmkorea_erp/build/macos/Build/Products/Debug/auto_updater/auto_updater.framework/Modules"
     'contents': [{
       'type': 'file',
       'name': "module.modulemap",
-      'external-contents': "/Users/cm/cmkorea_erp/build/macos/Build/Intermediates.noindex/Pods.build/Debug/auto_updater.build/unextended-module.modulemap",
+      'external-contents': "/Users/js/Documents/cmkorea_erp/build/macos/Build/Intermediates.noindex/Pods.build/Debug/auto_updater.build/unextended-module.modulemap",
     }]
   }]
 }

@@ -1,9 +1,1212 @@
 {
-  "ABIRoot": {
-    "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
-    "json_format_version": 8
-  },
-  "ConstValues": []
+  "kind": "Root",
+  "name": "TopLevel",
+  "printedName": "TopLevel",
+  "children": [
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "auto_updater"
+    },
+    {
+      "kind": "Import",
+      "name": "FlutterMacOS",
+      "printedName": "FlutterMacOS",
+      "declKind": "Import",
+      "moduleName": "auto_updater"
+    },
+    {
+      "kind": "Import",
+      "name": "Sparkle",
+      "printedName": "Sparkle",
+      "declKind": "Import",
+      "moduleName": "auto_updater"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "AutoUpdater",
+      "printedName": "AutoUpdater",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "_userDriver",
+          "printedName": "_userDriver",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "Sparkle.SPUStandardUserDriver?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "SPUStandardUserDriver",
+                  "printedName": "Sparkle.SPUStandardUserDriver",
+                  "usr": "c:objc(cs)SPUStandardUserDriver"
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12auto_updater11AutoUpdaterC11_userDriverSo015SPUStandardUserF0CSgvp",
+          "mangledName": "$s12auto_updater11AutoUpdaterC11_userDriverSo015SPUStandardUserF0CSgvp",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "Sparkle.SPUStandardUserDriver?",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "SPUStandardUserDriver",
+                      "printedName": "Sparkle.SPUStandardUserDriver",
+                      "usr": "c:objc(cs)SPUStandardUserDriver"
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12auto_updater11AutoUpdaterC11_userDriverSo015SPUStandardUserF0CSgvg",
+              "mangledName": "$s12auto_updater11AutoUpdaterC11_userDriverSo015SPUStandardUserF0CSgvg",
+              "moduleName": "auto_updater",
+              "implicit": true,
+              "isOpen": true,
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "Sparkle.SPUStandardUserDriver?",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "SPUStandardUserDriver",
+                      "printedName": "Sparkle.SPUStandardUserDriver",
+                      "usr": "c:objc(cs)SPUStandardUserDriver"
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12auto_updater11AutoUpdaterC11_userDriverSo015SPUStandardUserF0CSgvs",
+              "mangledName": "$s12auto_updater11AutoUpdaterC11_userDriverSo015SPUStandardUserF0CSgvs",
+              "moduleName": "auto_updater",
+              "implicit": true,
+              "isOpen": true,
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12auto_updater11AutoUpdaterC11_userDriverSo015SPUStandardUserF0CSgvM",
+              "mangledName": "$s12auto_updater11AutoUpdaterC11_userDriverSo015SPUStandardUserF0CSgvM",
+              "moduleName": "auto_updater",
+              "implicit": true,
+              "isOpen": true,
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "_updater",
+          "printedName": "_updater",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "Sparkle.SPUUpdater?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "SPUUpdater",
+                  "printedName": "Sparkle.SPUUpdater",
+                  "usr": "c:objc(cs)SPUUpdater"
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12auto_updater11AutoUpdaterC01_B0So10SPUUpdaterCSgvp",
+          "mangledName": "$s12auto_updater11AutoUpdaterC01_B0So10SPUUpdaterCSgvp",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 1,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "Sparkle.SPUUpdater?",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "SPUUpdater",
+                      "printedName": "Sparkle.SPUUpdater",
+                      "usr": "c:objc(cs)SPUUpdater"
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12auto_updater11AutoUpdaterC01_B0So10SPUUpdaterCSgvg",
+              "mangledName": "$s12auto_updater11AutoUpdaterC01_B0So10SPUUpdaterCSgvg",
+              "moduleName": "auto_updater",
+              "implicit": true,
+              "isOpen": true,
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "Sparkle.SPUUpdater?",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "SPUUpdater",
+                      "printedName": "Sparkle.SPUUpdater",
+                      "usr": "c:objc(cs)SPUUpdater"
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12auto_updater11AutoUpdaterC01_B0So10SPUUpdaterCSgvs",
+              "mangledName": "$s12auto_updater11AutoUpdaterC01_B0So10SPUUpdaterCSgvs",
+              "moduleName": "auto_updater",
+              "implicit": true,
+              "isOpen": true,
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12auto_updater11AutoUpdaterC01_B0So10SPUUpdaterCSgvM",
+              "mangledName": "$s12auto_updater11AutoUpdaterC01_B0So10SPUUpdaterCSgvM",
+              "moduleName": "auto_updater",
+              "implicit": true,
+              "isOpen": true,
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "onEvent",
+          "printedName": "onEvent",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "((Swift.String) -> ())?",
+              "children": [
+                {
+                  "kind": "TypeFunc",
+                  "name": "Function",
+                  "printedName": "(Swift.String) -> ()",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Void",
+                      "printedName": "()"
+                    },
+                    {
+                      "kind": "TypeNominal",
+                      "name": "String",
+                      "printedName": "Swift.String",
+                      "usr": "s:SS"
+                    }
+                  ]
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12auto_updater11AutoUpdaterC7onEventySScSgvp",
+          "mangledName": "$s12auto_updater11AutoUpdaterC7onEventySScSgvp",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage",
+            "AccessControl"
+          ],
+          "fixedbinaryorder": 2,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "((Swift.String) -> ())?",
+                  "children": [
+                    {
+                      "kind": "TypeFunc",
+                      "name": "Function",
+                      "printedName": "(Swift.String) -> ()",
+                      "children": [
+                        {
+                          "kind": "TypeNominal",
+                          "name": "Void",
+                          "printedName": "()"
+                        },
+                        {
+                          "kind": "TypeNominal",
+                          "name": "String",
+                          "printedName": "Swift.String",
+                          "usr": "s:SS"
+                        }
+                      ]
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12auto_updater11AutoUpdaterC7onEventySScSgvg",
+              "mangledName": "$s12auto_updater11AutoUpdaterC7onEventySScSgvg",
+              "moduleName": "auto_updater",
+              "implicit": true,
+              "isOpen": true,
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "((Swift.String) -> ())?",
+                  "children": [
+                    {
+                      "kind": "TypeFunc",
+                      "name": "Function",
+                      "printedName": "(Swift.String) -> ()",
+                      "children": [
+                        {
+                          "kind": "TypeNominal",
+                          "name": "Void",
+                          "printedName": "()"
+                        },
+                        {
+                          "kind": "TypeNominal",
+                          "name": "String",
+                          "printedName": "Swift.String",
+                          "usr": "s:SS"
+                        }
+                      ]
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12auto_updater11AutoUpdaterC7onEventySScSgvs",
+              "mangledName": "$s12auto_updater11AutoUpdaterC7onEventySScSgvs",
+              "moduleName": "auto_updater",
+              "implicit": true,
+              "isOpen": true,
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:12auto_updater11AutoUpdaterC7onEventySScSgvM",
+              "mangledName": "$s12auto_updater11AutoUpdaterC7onEventySScSgvM",
+              "moduleName": "auto_updater",
+              "implicit": true,
+              "isOpen": true,
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "AutoUpdater",
+              "printedName": "auto_updater.AutoUpdater",
+              "usr": "c:@M@auto_updater@objc(cs)AutoUpdater"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdater(im)init",
+          "mangledName": "$s12auto_updater11AutoUpdaterCACycfc",
+          "moduleName": "auto_updater",
+          "overriding": true,
+          "objc_name": "init",
+          "declAttributes": [
+            "Dynamic",
+            "ObjC",
+            "Override"
+          ],
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Function",
+          "name": "setFeedURL",
+          "printedName": "setFeedURL(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Optional",
+              "printedName": "Foundation.URL?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "URL",
+                  "printedName": "Foundation.URL",
+                  "usr": "s:10Foundation3URLV"
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:12auto_updater11AutoUpdaterC10setFeedURLyy10Foundation0G0VSgF",
+          "mangledName": "$s12auto_updater11AutoUpdaterC10setFeedURLyy10Foundation0G0VSgF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "declAttributes": [
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "checkForUpdates",
+          "printedName": "checkForUpdates()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:12auto_updater11AutoUpdaterC15checkForUpdatesyyF",
+          "mangledName": "$s12auto_updater11AutoUpdaterC15checkForUpdatesyyF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "declAttributes": [
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "checkForUpdatesInBackground",
+          "printedName": "checkForUpdatesInBackground()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:12auto_updater11AutoUpdaterC27checkForUpdatesInBackgroundyyF",
+          "mangledName": "$s12auto_updater11AutoUpdaterC27checkForUpdatesInBackgroundyyF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "declAttributes": [
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "setScheduledCheckInterval",
+          "printedName": "setScheduledCheckInterval(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:12auto_updater11AutoUpdaterC25setScheduledCheckIntervalyySiF",
+          "mangledName": "$s12auto_updater11AutoUpdaterC25setScheduledCheckIntervalyySiF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "declAttributes": [
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "updater",
+          "printedName": "updater(_:didAbortWithError:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SPUUpdater",
+              "printedName": "Sparkle.SPUUpdater",
+              "usr": "c:objc(cs)SPUUpdater"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Error",
+              "printedName": "Swift.Error",
+              "usr": "s:s5ErrorP"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdater(im)updater:didAbortWithError:",
+          "mangledName": "$s12auto_updater11AutoUpdaterC0B0_17didAbortWithErrorySo10SPUUpdaterC_s0H0_ptF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "objc_name": "updater:didAbortWithError:",
+          "declAttributes": [
+            "ObjC",
+            "AccessControl",
+            "RawDocComment"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "updater",
+          "printedName": "updater(_:didFinishLoading:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SPUUpdater",
+              "printedName": "Sparkle.SPUUpdater",
+              "usr": "c:objc(cs)SPUUpdater"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SUAppcast",
+              "printedName": "Sparkle.SUAppcast",
+              "usr": "c:objc(cs)SUAppcast"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdater(im)updater:didFinishLoadingAppcast:",
+          "mangledName": "$s12auto_updater11AutoUpdaterC0B0_16didFinishLoadingySo10SPUUpdaterC_So9SUAppcastCtF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "objc_name": "updater:didFinishLoadingAppcast:",
+          "declAttributes": [
+            "ObjC",
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "updater",
+          "printedName": "updater(_:didFindValidUpdate:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SPUUpdater",
+              "printedName": "Sparkle.SPUUpdater",
+              "usr": "c:objc(cs)SPUUpdater"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SUAppcastItem",
+              "printedName": "Sparkle.SUAppcastItem",
+              "usr": "c:objc(cs)SUAppcastItem"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdater(im)updater:didFindValidUpdate:",
+          "mangledName": "$s12auto_updater11AutoUpdaterC0B0_18didFindValidUpdateySo10SPUUpdaterC_So13SUAppcastItemCtF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "objc_name": "updater:didFindValidUpdate:",
+          "declAttributes": [
+            "ObjC",
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "updaterDidNotFindUpdate",
+          "printedName": "updaterDidNotFindUpdate(_:error:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SPUUpdater",
+              "printedName": "Sparkle.SPUUpdater",
+              "usr": "c:objc(cs)SPUUpdater"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Error",
+              "printedName": "Swift.Error",
+              "usr": "s:s5ErrorP"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdater(im)updaterDidNotFindUpdate:error:",
+          "mangledName": "$s12auto_updater11AutoUpdaterC0B16DidNotFindUpdate_5errorySo10SPUUpdaterC_s5Error_ptF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "objc_name": "updaterDidNotFindUpdate:error:",
+          "declAttributes": [
+            "ObjC",
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "updater",
+          "printedName": "updater(_:didDownloadUpdate:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SPUUpdater",
+              "printedName": "Sparkle.SPUUpdater",
+              "usr": "c:objc(cs)SPUUpdater"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SUAppcastItem",
+              "printedName": "Sparkle.SUAppcastItem",
+              "usr": "c:objc(cs)SUAppcastItem"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdater(im)updater:didDownloadUpdate:",
+          "mangledName": "$s12auto_updater11AutoUpdaterC0B0_17didDownloadUpdateySo10SPUUpdaterC_So13SUAppcastItemCtF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "objc_name": "updater:didDownloadUpdate:",
+          "declAttributes": [
+            "ObjC",
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "updater",
+          "printedName": "updater(_:willInstallUpdateOnQuit:immediateInstallationBlock:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Bool",
+              "printedName": "Swift.Bool",
+              "usr": "s:Sb"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SPUUpdater",
+              "printedName": "Sparkle.SPUUpdater",
+              "usr": "c:objc(cs)SPUUpdater"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "SUAppcastItem",
+              "printedName": "Sparkle.SUAppcastItem",
+              "usr": "c:objc(cs)SUAppcastItem"
+            },
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "() -> ()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ]
+            }
+          ],
+          "declKind": "Func",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdater(im)updater:willInstallUpdateOnQuit:immediateInstallationBlock:",
+          "mangledName": "$s12auto_updater11AutoUpdaterC0B0_23willInstallUpdateOnQuit26immediateInstallationBlockSbSo10SPUUpdaterC_So13SUAppcastItemCyyctF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "objc_name": "updater:willInstallUpdateOnQuit:immediateInstallationBlock:",
+          "declAttributes": [
+            "ObjC",
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "_emitEvent",
+          "printedName": "_emitEvent(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:12auto_updater11AutoUpdaterC10_emitEventyySSF",
+          "mangledName": "$s12auto_updater11AutoUpdaterC10_emitEventyySSF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "declAttributes": [
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        }
+      ],
+      "declKind": "Class",
+      "usr": "c:@M@auto_updater@objc(cs)AutoUpdater",
+      "mangledName": "$s12auto_updater11AutoUpdaterC",
+      "moduleName": "auto_updater",
+      "isOpen": true,
+      "declAttributes": [
+        "AccessControl",
+        "ObjC"
+      ],
+      "superclassUsr": "c:objc(cs)NSObject",
+      "hasMissingDesignatedInitializers": true,
+      "inheritsConvenienceInitializers": true,
+      "superclassNames": [
+        "ObjectiveC.NSObject"
+      ],
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Equatable",
+          "printedName": "Equatable",
+          "usr": "s:SQ",
+          "mangledName": "$sSQ"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Hashable",
+          "printedName": "Hashable",
+          "usr": "s:SH",
+          "mangledName": "$sSH"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CVarArg",
+          "printedName": "CVarArg",
+          "usr": "s:s7CVarArgP",
+          "mangledName": "$ss7CVarArgP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_KeyValueCodingAndObservingPublishing",
+          "printedName": "_KeyValueCodingAndObservingPublishing",
+          "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+          "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_KeyValueCodingAndObserving",
+          "printedName": "_KeyValueCodingAndObserving",
+          "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+          "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomStringConvertible",
+          "printedName": "CustomStringConvertible",
+          "usr": "s:s23CustomStringConvertibleP",
+          "mangledName": "$ss23CustomStringConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomDebugStringConvertible",
+          "printedName": "CustomDebugStringConvertible",
+          "usr": "s:s28CustomDebugStringConvertibleP",
+          "mangledName": "$ss28CustomDebugStringConvertibleP"
+        }
+      ]
+    },
+    {
+      "kind": "Import",
+      "name": "Cocoa",
+      "printedName": "Cocoa",
+      "declKind": "Import",
+      "moduleName": "auto_updater"
+    },
+    {
+      "kind": "Import",
+      "name": "FlutterMacOS",
+      "printedName": "FlutterMacOS",
+      "declKind": "Import",
+      "moduleName": "auto_updater"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "AutoUpdaterPlugin",
+      "printedName": "AutoUpdaterPlugin",
+      "children": [
+        {
+          "kind": "Function",
+          "name": "register",
+          "printedName": "register(with:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "FlutterPluginRegistrar",
+              "printedName": "FlutterMacOS.FlutterPluginRegistrar",
+              "usr": "c:objc(pl)FlutterPluginRegistrar"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdaterPlugin(cm)registerWithRegistrar:",
+          "mangledName": "$s12auto_updater17AutoUpdaterPluginC8register4withySo07FlutterE9Registrar_p_tFZ",
+          "moduleName": "auto_updater",
+          "static": true,
+          "objc_name": "registerWithRegistrar:",
+          "declAttributes": [
+            "Final",
+            "ObjC",
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Var",
+          "name": "registrar",
+          "printedName": "registrar",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "ImplicitlyUnwrappedOptional",
+              "printedName": "FlutterMacOS.FlutterPluginRegistrar?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "FlutterPluginRegistrar",
+                  "printedName": "FlutterMacOS.FlutterPluginRegistrar",
+                  "usr": "c:objc(pl)FlutterPluginRegistrar"
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12auto_updater17AutoUpdaterPluginC9registrar33_CEF51009701A28DA0CD52C29D3C17807LLSo07FlutterE9Registrar_pSgvp",
+          "mangledName": "$s12auto_updater17AutoUpdaterPluginC9registrar33_CEF51009701A28DA0CD52C29D3C17807LLSo07FlutterE9Registrar_pSgvp",
+          "moduleName": "auto_updater",
+          "isInternal": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage",
+            "AccessControl"
+          ],
+          "fixedbinaryorder": 0,
+          "hasStorage": true
+        },
+        {
+          "kind": "Var",
+          "name": "channel",
+          "printedName": "channel",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "ImplicitlyUnwrappedOptional",
+              "printedName": "FlutterMacOS.FlutterMethodChannel?",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "FlutterMethodChannel",
+                  "printedName": "FlutterMacOS.FlutterMethodChannel",
+                  "usr": "c:objc(cs)FlutterMethodChannel"
+                }
+              ],
+              "usr": "s:Sq"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12auto_updater17AutoUpdaterPluginC7channel33_CEF51009701A28DA0CD52C29D3C17807LLSo20FlutterMethodChannelCSgvp",
+          "mangledName": "$s12auto_updater17AutoUpdaterPluginC7channel33_CEF51009701A28DA0CD52C29D3C17807LLSo20FlutterMethodChannelCSgvp",
+          "moduleName": "auto_updater",
+          "isInternal": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage",
+            "AccessControl"
+          ],
+          "fixedbinaryorder": 1,
+          "hasStorage": true
+        },
+        {
+          "kind": "Var",
+          "name": "autoUpdater",
+          "printedName": "autoUpdater",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "AutoUpdater",
+              "printedName": "auto_updater.AutoUpdater",
+              "usr": "c:@M@auto_updater@objc(cs)AutoUpdater"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:12auto_updater17AutoUpdaterPluginC0aD033_CEF51009701A28DA0CD52C29D3C17807LLAA0cD0Cvp",
+          "mangledName": "$s12auto_updater17AutoUpdaterPluginC0aD033_CEF51009701A28DA0CD52C29D3C17807LLAA0cD0Cvp",
+          "moduleName": "auto_updater",
+          "isInternal": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage",
+            "AccessControl"
+          ],
+          "fixedbinaryorder": 2,
+          "hasStorage": true
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init(_:_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "AutoUpdaterPlugin",
+              "printedName": "auto_updater.AutoUpdaterPlugin",
+              "usr": "c:@M@auto_updater@objc(cs)AutoUpdaterPlugin"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "FlutterPluginRegistrar",
+              "printedName": "FlutterMacOS.FlutterPluginRegistrar",
+              "usr": "c:objc(pl)FlutterPluginRegistrar"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "FlutterMethodChannel",
+              "printedName": "FlutterMacOS.FlutterMethodChannel",
+              "usr": "c:objc(cs)FlutterMethodChannel"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:12auto_updater17AutoUpdaterPluginCyACSo07FlutterE9Registrar_p_So0F13MethodChannelCtcfc",
+          "mangledName": "$s12auto_updater17AutoUpdaterPluginCyACSo07FlutterE9Registrar_p_So0F13MethodChannelCtcfc",
+          "moduleName": "auto_updater",
+          "declAttributes": [
+            "AccessControl"
+          ],
+          "init_kind": "Designated"
+        },
+        {
+          "kind": "Function",
+          "name": "handle",
+          "printedName": "handle(_:result:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "FlutterMethodCall",
+              "printedName": "FlutterMacOS.FlutterMethodCall",
+              "usr": "c:objc(cs)FlutterMethodCall"
+            },
+            {
+              "kind": "TypeFunc",
+              "name": "Function",
+              "printedName": "(Any?) -> ()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Optional",
+                  "printedName": "Any?",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "ProtocolComposition",
+                      "printedName": "Any"
+                    }
+                  ],
+                  "usr": "s:Sq"
+                }
+              ]
+            }
+          ],
+          "declKind": "Func",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdaterPlugin(im)handleMethodCall:result:",
+          "mangledName": "$s12auto_updater17AutoUpdaterPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "objc_name": "handleMethodCall:result:",
+          "declAttributes": [
+            "ObjC",
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Function",
+          "name": "_emitEvent",
+          "printedName": "_emitEvent(_:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:12auto_updater17AutoUpdaterPluginC10_emitEventyySSF",
+          "mangledName": "$s12auto_updater17AutoUpdaterPluginC10_emitEventyySSF",
+          "moduleName": "auto_updater",
+          "isOpen": true,
+          "declAttributes": [
+            "AccessControl"
+          ],
+          "funcSelfKind": "NonMutating"
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "AutoUpdaterPlugin",
+              "printedName": "auto_updater.AutoUpdaterPlugin",
+              "usr": "c:@M@auto_updater@objc(cs)AutoUpdaterPlugin"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "c:@M@auto_updater@objc(cs)AutoUpdaterPlugin(im)init",
+          "mangledName": "$s12auto_updater17AutoUpdaterPluginCACycfc",
+          "moduleName": "auto_updater",
+          "overriding": true,
+          "implicit": true,
+          "objc_name": "init",
+          "declAttributes": [
+            "Dynamic",
+            "ObjC",
+            "Override"
+          ],
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Class",
+      "usr": "c:@M@auto_updater@objc(cs)AutoUpdaterPlugin",
+      "mangledName": "$s12auto_updater17AutoUpdaterPluginC",
+      "moduleName": "auto_updater",
+      "isOpen": true,
+      "declAttributes": [
+        "AccessControl",
+        "ObjC"
+      ],
+      "superclassUsr": "c:objc(cs)NSObject",
+      "superclassNames": [
+        "ObjectiveC.NSObject"
+      ],
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Equatable",
+          "printedName": "Equatable",
+          "usr": "s:SQ",
+          "mangledName": "$sSQ"
+        },
+        {
+          "kind": "Conformance",
+          "name": "Hashable",
+          "printedName": "Hashable",
+          "usr": "s:SH",
+          "mangledName": "$sSH"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CVarArg",
+          "printedName": "CVarArg",
+          "usr": "s:s7CVarArgP",
+          "mangledName": "$ss7CVarArgP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_KeyValueCodingAndObservingPublishing",
+          "printedName": "_KeyValueCodingAndObservingPublishing",
+          "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+          "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "_KeyValueCodingAndObserving",
+          "printedName": "_KeyValueCodingAndObserving",
+          "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+          "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomStringConvertible",
+          "printedName": "CustomStringConvertible",
+          "usr": "s:s23CustomStringConvertibleP",
+          "mangledName": "$ss23CustomStringConvertibleP"
+        },
+        {
+          "kind": "Conformance",
+          "name": "CustomDebugStringConvertible",
+          "printedName": "CustomDebugStringConvertible",
+          "usr": "s:s28CustomDebugStringConvertibleP",
+          "mangledName": "$ss28CustomDebugStringConvertibleP"
+        }
+      ]
+    }
+  ],
+  "json_format_version": 6
 }

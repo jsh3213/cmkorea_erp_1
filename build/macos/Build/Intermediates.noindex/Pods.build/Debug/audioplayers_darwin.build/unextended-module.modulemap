@@ -6,5 +6,5 @@ framework module audioplayers_darwin {
 }
 
 module audioplayers_darwin.__Swift {
-  exclude header "audioplayers_darwin-Swift.h"
+    exclude header "audioplayers_darwin-Swift.h"
 }

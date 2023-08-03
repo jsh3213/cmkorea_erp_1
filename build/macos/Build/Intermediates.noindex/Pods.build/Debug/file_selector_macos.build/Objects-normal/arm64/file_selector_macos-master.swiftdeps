@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)"
+options: "30773877af673ad64ab80f2e2d11ee9a24eeee8f268b0aacf6b33343a52cc033"
+build_start_time: [1691066420, 500085830]
+build_end_time: [1691066421, 558504104]
+inputs:
+  "/Users/js/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.3+1/macos/Classes/FileSelectorPlugin.swift": [1690725751, 872907876]
+  "/Users/js/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.3+1/macos/Classes/messages.g.swift": [1690725751, 874494075]

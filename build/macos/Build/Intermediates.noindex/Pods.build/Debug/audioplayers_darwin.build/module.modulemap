@@ -6,6 +6,6 @@ framework module audioplayers_darwin {
 }
 
 module audioplayers_darwin.Swift {
-  header "audioplayers_darwin-Swift.h"
-  requires objc
+    header "audioplayers_darwin-Swift.h"
+    requires objc
 }

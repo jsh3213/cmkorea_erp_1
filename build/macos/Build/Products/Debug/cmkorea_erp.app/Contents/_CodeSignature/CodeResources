@@ -6,11 +6,11 @@
 	<dict>
 		<key>Resources/AppIcon.icns</key>
 		<data>
-		WnTSI1AjkhL8cU9oCOZXreSXty0=
+		mscAbsqnmLQQ6rrckU0VC6gymRc=
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		8E8jTuZg5x/I4OkKyFIOldHqqaQ=
+		sv758jC1KrFBRq6uFvSv4TQB5PE=
 		</data>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<data>
@@ -23,19 +23,19 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			fgOUgvTL6hY6NB3oBD9WMnnegEY=
+			sLvKAKhDF62Q/8CNC/dgFPSGwfM=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"7e039482f4cbea163a341de8043f563279de8046"</string>
+			<string>cdhash H"b0bbca00a84317ad90ffc08d0bf76014f486c1f3"</string>
 		</dict>
 		<key>Frameworks/FlutterMacOS.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Lh+U3RAcdZg+/7pWtjw5A5n7kEg=
+			qW1TSE2uqHRMwifb+toddG1/tI4=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"2e1f94dd101c75983effba56b63c390399fb9048"</string>
+			<string>cdhash H"a96d53484daea8744cc227dbfada1d746d7fb48e"</string>
 		</dict>
 		<key>Frameworks/Sparkle.framework</key>
 		<dict>
@@ -50,19 +50,28 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			y6JKdeILP7A0ob1F49sQgZ4TKAk=
+			NHtvJjINDopCrDgIo9G/aIq2e5k=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"cba24a75e20b3fb034a1bd45e3db10819e132809"</string>
+			<string>cdhash H"347b6f26320d0e8a42ac3808a3d1bf688ab67b99"</string>
 		</dict>
 		<key>Frameworks/auto_updater.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			tJBx8TFPvmXtgXlwgHv/TXd/gcU=
+			8wOGOZA87iJJZeXCD0awQWSSoVk=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"b49071f1314fbe65ed817970807bff4d777f81c5"</string>
+			<string>cdhash H"f3038639903cee224965e5c20f46b0416492a159"</string>
+		</dict>
+		<key>Frameworks/file_selector_macos.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			A1bIbtS1dCfZqNf+Mksj4oUiGAc=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"0356c86ed4b57427d9a8d7fe324b23e285221807"</string>
 		</dict>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<dict>
@@ -239,50 +248,50 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			jmNT/LecQ6AzBhqX/pvInFFqYk4=
+			NcVLspy/QARt2TTplaUIqMFS+IM=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"8e6353fcb79c43a033061a97fe9bc89c516a624e"</string>
+			<string>cdhash H"35c54bb29cbf40046dd934e995a508a8c152f883"</string>
 		</dict>
 		<key>Frameworks/package_info_plus.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			OkPXmnje2y80AKnhXm+RJrAVxig=
+			XGi4DV0XZdyYT0kTNu/0M2d5f8o=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"3a43d79a78dedb2f3400a9e15e6f9126b015c628"</string>
+			<string>cdhash H"5c68b80d5d1765dc984f491336eff43367797fca"</string>
 		</dict>
 		<key>Frameworks/path_provider_foundation.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			j0vZ6FLJSwnWT+PCWMvROsUIl3s=
+			jzmBPPME1CKPR3R0pPpvaMoLgFU=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"8f4bd9e852c94b09d64fe3c258cbd13ac508977b"</string>
+			<string>cdhash H"8f39813cf304d4228f477474a4fa6f68ca0b8055"</string>
 		</dict>
 		<key>Frameworks/url_launcher_macos.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			HiVFgavHKD+aPbW3lft0y7GF1ws=
+			z2ExYCxy1uQIRrCMZiOYxaj8Wzk=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"1e254581abc7283f9a3db5b795fb74cbb185d70b"</string>
+			<string>cdhash H"cf6131602c72d6e40846b08c662398c5a8fc5b39"</string>
 		</dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b5gagWkFHSnyQN0GT0uLVENHCxZI7iSD4A0Md7jugJU=
+			85tRUp8zAiCRA8M1Grzk4jS3zeXOF+q+C0YxRvdZLGo=
 			</data>
 		</dict>
 		<key>Resources/Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SBXD6+ikozQCMrqXsZEl61tF3mxUvzEDtIdOl7mYa68=
+			rAZ06Ooge794M8fQF2r7/LOVI/uJssJ5OPnPpy4KKs0=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/MainMenu.nib</key>

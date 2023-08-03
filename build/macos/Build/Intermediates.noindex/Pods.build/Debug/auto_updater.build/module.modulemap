@@ -6,6 +6,6 @@ framework module auto_updater {
 }
 
 module auto_updater.Swift {
-  header "auto_updater-Swift.h"
-  requires objc
+    header "auto_updater-Swift.h"
+    requires objc
 }
